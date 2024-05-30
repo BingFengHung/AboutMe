@@ -5,10 +5,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && echo > dist/.nojekyll",
+    "generate": "nuxt generate && echo > .output/public/.nojekyll",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages --dotfiles=true -d dist"
+    "deploy": "gh-pages --dotfiles -d .output/public"
   },
   "dependencies": {
     "nuxt": "^3.11.2",
