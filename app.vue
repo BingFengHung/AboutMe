@@ -16,10 +16,8 @@
     <Introduce/>
     <About/>
     <SkillPanel/>
-    
-    <div class="">
-      
-    </div>
+    <ProjectPanel/>
+    <Thanks/>
   </div>
 </template>
 
