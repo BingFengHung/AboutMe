@@ -1,31 +1,20 @@
 <template>
   <div class="container">
-    <DotMark></DotMark>
-    <span>Joe@Thanks</span>
-    
-    <div class="terminal" ref="terminal">
-    <div v-for="(line, index) in displayedLines" :key="index" class="line">
-      <span v-for="(part, partIndex) in line.parts" :key="partIndex" :style="{ color: part.color }">
-        {{ part.text }}
-      </span>
-    </div>
-  </div>
-
-    <!-- <div class="terminal" ref="terminal">
+    <div class="terminal">
+      <div class="terminal_title"> 
+        <DotMark></DotMark>
+        <span>Joe@Thanks</span>
+      </div>
+      <div class="terminal_body" ref="terminal">
       <div v-for="(line, index) in displayedLines" :key="index" class="line">
-        <span v-for="(part, partIndex) in line" :key="partIndex" :style="{ color: part.color }">
+        <span v-for="(part, partIndex) in line.parts" :key="partIndex" :style="{ color: part.color }">
           {{ part.text }}
         </span>
       </div>
-    </div> -->
-    <!-- <div class="terminal" ref="terminal">
-      <div v-for="(line, index) in displayLines" :key="index" class="line">
-        {{ line }}
-      </div>
-    </div> -->
-    <!-- <div># joe@about $./cd me</div>
-    <div># joe@about $joe test</div> -->
-    <div>Thanks</div>  
+    </div>
+  </div> 
+  
+  <div>Thanks</div>  
   </div>
 </template>
 
@@ -134,7 +123,25 @@ const displayLinesWithTypingEffect = () => {
   width: 80%;
   margin: auto;
   margin-top: 20px;
-  height: 200px;
+}
+
+.terminal_title {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.terminal_title > span {
+  text-align: center;
+}
+
+.terminal_body {
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .line {
