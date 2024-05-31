@@ -78,6 +78,8 @@ const sideProjects= reactive([{
 
 .project_container__title {
   font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .project_container__body {
@@ -88,6 +90,8 @@ const sideProjects= reactive([{
 
 .sideProject_container__title {
   font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .sideProject_container__body {

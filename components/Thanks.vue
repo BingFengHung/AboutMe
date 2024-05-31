@@ -13,8 +13,6 @@
       </div>
     </div>
   </div> 
-  
-  <div>Thanks</div>  
   </div>
 </template>
 

@@ -18,6 +18,9 @@
     <SkillPanel/>
     <ProjectPanel/>
     <Thanks/>
+    <footer>
+      copyright BingFengHung
+    </footer>
   </div>
 </template>
 
@@ -53,6 +56,14 @@ header ul {
 header li {
   list-style: none;
   margin: 0px 20px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: #dadada;
 }
 
 </style>
