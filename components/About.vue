@@ -12,35 +12,36 @@
     <Card title="網頁開發.js" :contents="webSkill"></Card>
     <Card title="其他技術.sh" :contents="otherSkill"></Card>
   </div>
-  
-  <div class="languages">
-    <LanguageCard :title="chinese.title" :level="chinese.level"></LanguageCard>
-    <LanguageCard :title="english.title" :level="english.level"></LanguageCard>
+  <div class="personal">
+    <LanguagePanel :languages="languages"></LanguagePanel>
+    <Hobby></Hobby>
   </div>
 </main>
 </div>
 </template>
 
 <script setup lang="ts">
-  const chinese = reactive({
+  const languages = reactive([
+      { 
     title: '中文',
     level: {
-      listen: 30,
-      say: 50,
-      read: 10,
-      write: 50
-    }
-  })
-
-  const english = reactive({
+      listen: 100,
+      say: 100,
+      read: 100,
+      write: 90
+    } 
+  }, 
+  {
     title: '英文',
     level: {
-      listen: 30,
-      say: 50,
-      read: 10,
-      write: 50
+      listen: 80,
+      say: 70,
+      read: 85,
+      write: 60
     }
-  })
+  } 
+  ])
+
 
   const aboutMe = reactive([
     "1. 軟體工作資歷達 8 年，擅長 .NET 桌面程式、前端網頁與手機 APP 開發",
@@ -82,5 +83,10 @@ header {
 .skills {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+}
+    
+.personal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 </style>

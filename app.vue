@@ -45,6 +45,7 @@ header {
   background-color: #282828;
   color: white;
   cursor: pointer;
+  z-index: 1;
 }
 
 header ul {

@@ -1,16 +1,23 @@
 <template>
   <div class="container">
-    <div class="dot">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <div class="title">{{ title }}</div>
-    <div class="level">
-      聽: {{ level.listen }}
-      說: {{ level.say }}
-      讀: {{ level.read }}
-      寫: {{ level.write }}
+    <div class="levels">
+      <div class="level">
+        <span>聽：</span>
+        <ProgressBar :progress="level.listen"></ProgressBar>
+      </div>
+      <div class="level"> 
+        <span>說：</span> 
+        <ProgressBar :progress="level.say"></ProgressBar>
+      </div>
+      <div class="level"> 
+        <span>讀：</span> 
+        <ProgressBar :progress="level.read"></ProgressBar>
+      </div>
+      <div class="level"> 
+        <span>寫：</span> 
+        <ProgressBar :progress="level.write"></ProgressBar>
+      </div>
     </div>
   </div>
 </template>
@@ -26,15 +33,19 @@
   })
 </script>
 
-<style scope>
-.container {
-  
+<style scoped>
+.title {
+  font-size: 1.5rem;
+  color: white;
 }
-      
-.title{
+
+.levels {
+  color: white;
 }
-      
+
 .level {
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

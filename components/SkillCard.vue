@@ -1,10 +1,9 @@
 <template>
-  <div>
-    {{ props.title }}
-    <ul>
+  <div class="container">
+    <div class="title">{{ props.title }}</div>
+    <ul class="skill">
       <li v-for="(content, index) in props.contents" :key="index">{{ content }}</li>
     </ul>
-  </div>
   <div class="progress_bar" ref="progressContainer">
     <div class="progress_in" :style="{ width: progressWidth }">
       <div class="circle">
@@ -12,9 +11,10 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const props = defineProps({
     progress: {
       type: Number
@@ -34,12 +34,14 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const progressInElement = entry.target.querySelector('.progress_in');
-          progressInElement.style.animation = 'none';
-          progressInElement.offsetHeight;
-          progressInElement.style.animation = null;
-          progressInElement.style.width=`${props.progress}%`;
-          observer.disconnect();
+          const progressInElement = entry.target.querySelector('.progress_in') as HTMLDivElement | null;
+          if (progressInElement) {
+            progressInElement.style.animation = 'none';
+            progressInElement.offsetHeight;
+            progressInElement.style.animation = '';
+            progressInElement.style.width=`${props.progress}%`;
+            observer.disconnect();
+          }
         }
       })
     })
@@ -93,5 +95,22 @@
   right: 0px;
   box-sizing: border-box;
   border: 3px solid #b4be13;
+}
+
+.container {
+  background-color: white !important;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, .2);
+}
+
+.title {
+  font-size: 1.3rem;
+  margin-left: 10px;
+}
+    
+.skill {
+  font-size: 1.2rem;
+  list-style-type: square;
+  margin-top: 5px;
 }
 </style>

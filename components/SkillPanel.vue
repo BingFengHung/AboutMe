@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>技能</div>
+    <div class="title">技能</div>
     <SkillCard :progress="wpf.progress" :title="wpf.title" :contents="wpf.contents"/>
     <SkillCard :progress="mobile.progress" :title="mobile.title" :contents="mobile.contents"/>
     <SkillCard :progress="web.progress" :title="web.title" :contents="web.contents"/>
@@ -46,5 +46,14 @@
 .container {
   background-color: #f5f5f5;
   color: #7b7267;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 </style>
