@@ -1,11 +1,19 @@
 <template>
-<div>
-  <div>專案項目</div> 
-  <Project v-for="(project, index) in projects" :key="index" 
-          :title="project.title" :contents="project.contents" :imageUrl="project.imageUrl" :importants="project.importants"></Project>
+<div class="container">
+  <div class="project_container">
+    <div class="project_container__title">專案項目</div> 
+    <div class="project_container__body">
+      <Project v-for="(project, index) in projects" :key="index" 
+              :title="project.title" :contents="project.contents" :imageUrl="project.imageUrl" :importants="project.importants"></Project>
+    </div>
+  </div>
   
-  <div>Side Project</div> 
-  <sideProject v-for="(project, index) in sideProjects"></sideProject>
+  <div class="sideProject_container">
+    <div class="sideProject_container__title">Side Project</div> 
+    <div class="sideProject_container__body">
+      <SideProject v-for="(project, index) in sideProjects" :key="index" :title="project.title" :contents="project.contents" :imageUrl="project.imageUrl"></SideProject>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -29,10 +37,62 @@ const projects = reactive([{
     imageUrl: './xxx.png'
   }])
 
-const sideProject= reactive([{
-  
+const sideProjects= reactive([{
+  title: 'WPFMVVMFileOpen',
+  contents: '使用 Visual Studio Extension 開發一個小工具，加快程式開發的效率。方便在開發 WPF 的時候，快速的在 View 與 ViewModel 檔案之間進行快速切換',
+  imageUrl: './xxx.png'
+}, {
+  title: 'AI Git Commit Message',
+  contents: '使用 HuggingFace 上面的 narySt/codeT5p_CommitMessageGen 模型協助產生 git message，並將此功能做成一個 CLI 工具，只需要下指令，即可自動產生 Commit Message',
+  imageUrl: './xxx.png'
+}, {
+  title: 'CodeSnippets (Visual Studio Extensions)',
+  contents: '方便在 Visual Studio 中自定義常用的程式與法 (CRUD)',
+  imageUrl: './xxx.png'
+}, {
+  title: 'VisualStudioBuildScriptGenerator',
+  contents: '由於將專案加入到版本管控的時候，通常再次 Clone 下載專案下來的時候，相關的檔案連結會不見；為此，本工具主要的目的是產生一個腳本，Clone 專案下來的時候，執行腳本就能完成編譯的動作，而不會因為缺少東西導致編譯失敗。',
+  imageUrl: './xxx.png'
 }])
 </script>
 
 <style scoped>
+.container {
+  margin: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.project_container {
+  background-color: #dadada;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sideProject_container {
+  background-color: #dadada;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.project_container__title {
+  font-size: 1.5rem;
+}
+
+.project_container__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.sideProject_container__title {
+  font-size: 1.5rem;
+}
+
+.sideProject_container__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
 </style>

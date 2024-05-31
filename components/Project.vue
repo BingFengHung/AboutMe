@@ -22,3 +22,16 @@
     }
   })
 </script>
+
+<style scoped>
+span {
+  display: inline-block;
+  border: 1px solid #b4be13;
+  background-color: #b4be13;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 2px;
+  font-size: .8rem;
+}
+</style>
