@@ -54,5 +54,11 @@ export default defineNuxtConfig({
       navigateFallbackAllowlist: [/^\/$/],
       type: 'module',
     }, 
+  },
+  content: {
+    documentDriven: true,
+    experimental:{
+      clientDB: true
+    }
   }
 })
