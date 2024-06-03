@@ -18,8 +18,8 @@
     </section>
 
     <section id="about">
-    <!-- <About/> -->
-      <div class="block2"></div>
+    <About/>
+      <!-- <div class="block2"></div> -->
     </section>
 
     <section id="skills">
@@ -38,7 +38,10 @@
     </footer>
   </div>
 </template>
-
+<!-- <script setup>
+//const data = await queryContent('/language-proficiency').only('body').find()
+</script>
+ -->
 <style>
 body {
   margin: 0px;

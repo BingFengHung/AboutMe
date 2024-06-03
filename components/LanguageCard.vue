@@ -1,36 +1,36 @@
 <template>
   <div class="container">
-    <div class="title">{{ title }}</div>
+    <div class="title">{{ languageName}}</div>
     <div class="levels">
       <div class="level">
         <span>聽：</span>
-        <ProgressBar :progress="level.listen"></ProgressBar>
+        <ProgressBar :progress="listen"></ProgressBar>
       </div>
       <div class="level"> 
         <span>說：</span> 
-        <ProgressBar :progress="level.say"></ProgressBar>
+        <ProgressBar :progress="speak"></ProgressBar>
       </div>
       <div class="level"> 
         <span>讀：</span> 
-        <ProgressBar :progress="level.read"></ProgressBar>
+        <ProgressBar :progress="read"></ProgressBar>
       </div>
       <div class="level"> 
         <span>寫：</span> 
-        <ProgressBar :progress="level.write"></ProgressBar>
+        <ProgressBar :progress="write"></ProgressBar>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-  defineProps({
-    title: { 
-      type: String
-    },
-    level: {
-      type: Object
-    }
-  })
+<script setup lang="ts"> 
+import type { Language, Level } from '~/types/language';
+
+const props = defineProps<{ language: Language }>()
+
+const { language } = toRefs(props);
+const { language: languageName, level } = toRefs(language.value);
+const { listen, speak, read, write } = toRefs(level.value);
+
 </script>
 
 <style scoped>

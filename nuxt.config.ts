@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     },
     baseURL: '/AboutMe/'
   },
-  modules: ['@vite-pwa/nuxt'],
+  // modules: ['@vite-pwa/nuxt', "@nuxt/content"],
+  modules: ['@vite-pwa/nuxt', "@nuxt/content" ],
   pwa: {
     manifest: {
       name: 'About Me PWA',

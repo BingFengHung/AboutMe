@@ -1,0 +1,19 @@
+[
+  { 
+    "language": "中文", 
+    "level": { 
+      "listen": 100,
+      "speak": 100,
+      "read": 100,
+      "write": 90 
+    }
+  }, {
+    "language": "英文",
+    "level": {
+      "listen": 80,
+      "speak": 70,
+      "read": 85,
+      "write": 60
+    }
+  }
+]

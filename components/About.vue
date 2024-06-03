@@ -1,28 +1,33 @@
 <template>
 <div class="container">
-<header>
+<!-- <header>
   <Tag>關於我</Tag>
-</header>
+</header> -->
 <main>
-  <Card title="個人介紹.html" :contents="aboutMe">
+  <!-- <Card title="個人介紹.html" :contents="aboutMe">
   </Card>
   
   <div class="skills">
     <Card title=".NET 技術.cs" :contents="csSkill"></Card>
     <Card title="網頁開發.js" :contents="webSkill"></Card>
     <Card title="其他技術.sh" :contents="otherSkill"></Card>
-  </div>
+  </div> -->
   <div class="personal">
     <LanguagePanel :languages="languages"></LanguagePanel>
-    <Hobby></Hobby>
+    <!-- <Hobby></Hobby> -->
   </div>
 </main>
 </div>
 </template>
 
 <script setup lang="ts">
-  const languages = reactive([
-      { 
+import type { Language } from '~/types/language'; 
+
+const data = await queryContent('/language-proficiency').only('body').find()
+const langs: Array<Language> = JSON.parse(JSON.stringify(data[0]['body']))
+
+const languages: Array<Language> = reactive([
+      /* { 
     title: '中文',
     level: {
       listen: 100,
@@ -39,8 +44,15 @@
       read: 85,
       write: 60
     }
-  } 
+  }  */
   ])
+  
+  // for(let lang of langs) {
+  //   languages.push(lang)
+  // }
+
+  languages.splice(0, languages.length, ...langs);
+
 
 
   const aboutMe = reactive([

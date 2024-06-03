@@ -2,17 +2,18 @@
 <div class="container">
   <DotMark></DotMark>
   <div class="langPanel">
-    <LanguageCard v-for="({title, level}, index) in languages" :key="index" 
-    :title="title" 
-    :level="level"></LanguageCard>
+    <LanguageCard v-for="(language, index) in languages" :key="index" 
+    :language="language"></LanguageCard>
   </div>
 </div>
 </template>
 
 <script setup lang="ts">
+import type { Language } from '~/types/language';
+
   defineProps({
     languages: {
-      type: Array
+      type: Array<Language>
     }
   })
 </script>
