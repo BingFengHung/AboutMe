@@ -23,36 +23,18 @@
 <script setup lang="ts">
 import type { Language } from '~/types/language'; 
 
-const data = await queryContent('/language-proficiency').only('body').find()
+const data = await queryContent('aboutme', 'language-proficiency').only('body').find()
 const langs: Array<Language> = JSON.parse(JSON.stringify(data[0]['body']))
 
-const languages: Array<Language> = reactive([
-      /* { 
-    title: '中文',
-    level: {
-      listen: 100,
-      say: 100,
-      read: 100,
-      write: 90
-    } 
-  }, 
-  {
-    title: '英文',
-    level: {
-      listen: 80,
-      say: 70,
-      read: 85,
-      write: 60
-    }
-  }  */
-  ])
-  
-  // for(let lang of langs) {
-  //   languages.push(lang)
-  // }
+const languages: Array<Language> = reactive([]) 
+languages.splice(0, languages.length, ...langs);
 
-  languages.splice(0, languages.length, ...langs);
+const me = await queryContent('aboutme', 'me').only('entries').find()
+//console.log(me[0])
+const myData = me[0]
 
+const total = await queryContent('aboutme').find()
+console.log(total)
 
 
   const aboutMe = reactive([
