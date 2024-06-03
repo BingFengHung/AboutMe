@@ -5,10 +5,10 @@
     <header>
       <div>Home</div>
       <div class="nav"> 
-        <NuxtLink class="nav-link" to="#" v-scroll-to="'introduce'">首頁</NuxtLink>
-        <NuxtLink class="nav-link" to="#" v-scroll-to="'about'">關於我</NuxtLink>
-        <NuxtLink class="nav-link" to="#" v-scroll-to="'skills'">技能</NuxtLink>
-        <NuxtLink class="nav-link" to="#" v-scroll-to="'projects'">專案</NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'introduce'">首頁</NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'about'">關於我</NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'skills'">技能</NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'projects'">專案</NuxtLink>
       </div>
     </header>
 
@@ -18,8 +18,8 @@
     </section>
 
     <section id="about">
-    <About/>
-      <!-- <div class="block2"></div> -->
+    <!-- <About/> -->
+      <div class="block2"></div>
     </section>
 
     <section id="skills">

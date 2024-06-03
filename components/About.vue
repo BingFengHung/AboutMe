@@ -1,20 +1,19 @@
 <template>
 <div class="container">
-<!-- <header>
+<header>
   <Tag>關於我</Tag>
-</header> -->
+</header> 
 <main>
-  <!-- <Card title="個人介紹.html" :contents="aboutMe">
-  </Card>
+  <Card title="個人介紹.html" :contents="aboutMe"></Card>
   
   <div class="skills">
     <Card title=".NET 技術.cs" :contents="csSkill"></Card>
     <Card title="網頁開發.js" :contents="webSkill"></Card>
     <Card title="其他技術.sh" :contents="otherSkill"></Card>
-  </div> -->
+  </div> 
   <div class="personal">
     <LanguagePanel :languages="languages"></LanguagePanel>
-    <!-- <Hobby></Hobby> -->
+    <Hobby></Hobby>
   </div>
 </main>
 </div>
@@ -29,19 +28,23 @@ const langs: Array<Language> = JSON.parse(JSON.stringify(data[0]['body']))
 const languages: Array<Language> = reactive([]) 
 languages.splice(0, languages.length, ...langs);
 
+const aboutMe: Array<string> = reactive([])
 const me = await queryContent('aboutme', 'me').only('entries').find()
-//console.log(me[0])
-const myData = me[0]
+const myEntries = me[0]['entries']
 
-const total = await queryContent('aboutme').find()
-console.log(total)
+aboutMe.splice(0, aboutMe.length, ...myEntries)
+
+// const myData = me[0]
+
+// const total = await queryContent('aboutme').find()
+// console.log(total)
 
 
-  const aboutMe = reactive([
-    "1. 軟體工作資歷達 8 年，擅長 .NET 桌面程式、前端網頁與手機 APP 開發",
-    "2. 能夠站在客戶的角度思考，交付客戶滿意的軟體與最佳使用者體驗",
-    "3. 具有敏銳的洞察力與思考力，以及靈活彈性的運籌能力"
-  ]);
+  // const aboutMe = reactive([
+  //   "1. 軟體工作資歷達 8 年，擅長 .NET 桌面程式、前端網頁與手機 APP 開發",
+  //   "2. 能夠站在客戶的角度思考，交付客戶滿意的軟體與最佳使用者體驗",
+  //   "3. 具有敏銳的洞察力與思考力，以及靈活彈性的運籌能力"
+  // ]);
   
   const csSkill = reactive([
     "桌面程式：WPF/WinForm",
