@@ -59,8 +59,8 @@ const sideProjects= reactive([{
 <style scoped>
 .container {
   margin: 10px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 

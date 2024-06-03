@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  plugins: ['~/plugins/scroll.js'],
   ssr: false,
   app: {
     head: {

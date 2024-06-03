@@ -1,5 +1,5 @@
 <template>
-  <div class="card"> 
+  <div class="card" ref="container"> 
     <div class="card_title"> {{ title }} </div>
     <img class="card_img" :src="imageUrl"/>  
     <div class="card_content"> {{ contents }} </div>
@@ -23,6 +23,21 @@
       type: String
     }
   })
+  
+  const container = ref(null);
+  onMounted(()=> {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          container.classList.add('show');
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.2
+    })
+    observer.observe(container.value);
+  })
 </script>
 
 <style scoped>
@@ -35,6 +50,39 @@
   justify-content: flex-start;
   flex-direction: column;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  transition: transform .3s ease;
+  animation: drop .5s forwards;
+  opacity: 0.6;
+  transform: translateY(-100px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 2.5s;
+}
+
+@keyframes drop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card_title {
