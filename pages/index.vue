@@ -4,12 +4,12 @@
     <NuxtLoadingIndicator/>
     <header>
       <div>Home</div>
-      <ul> 
-        <li><NuxtLink to="#" v-scroll-to="'introduce'">Introduce</NuxtLink></li>
-        <li><NuxtLink to="#" v-scroll-to="'about'">關於我</NuxtLink></li>
-        <li><NuxtLink to="#" v-scroll-to="'skills'">技能</NuxtLink></li>
-        <li><NuxtLink to="#" v-scroll-to="'projects'">專案</NuxtLink></li>
-      </ul>
+      <div class="nav"> 
+        <NuxtLink class="nav-link" to="#" v-scroll-to="'introduce'">首頁</NuxtLink>
+        <NuxtLink class="nav-link" to="#" v-scroll-to="'about'">關於我</NuxtLink>
+        <NuxtLink class="nav-link" to="#" v-scroll-to="'skills'">技能</NuxtLink>
+        <NuxtLink class="nav-link" to="#" v-scroll-to="'projects'">專案</NuxtLink>
+      </div>
     </header>
 
     <section id="introduce">
@@ -79,13 +79,23 @@ header {
   z-index: 2;
 }
 
-header ul {
-  display: flex;
-}
-
 header li {
   list-style: none;
   margin: 0px 20px;
+}
+
+.nav {
+  display: flex;
+  padding: 20px 0px;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0px 20px;
+}
+
+.nav-link:hover {
+  font-weight: bold;
 }
 
 footer {
