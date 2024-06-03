@@ -1,28 +1,19 @@
 <template>
   <div class="container">
     <DotMark></DotMark>
-    <div class="title">{{ title }}</div>  
+    <div class="title">{{ props.title }}</div>  
     <div>
       <ul>
-        <li v-for="(content, index) in contents" :key="index">
-          {{ content }}
+        <li v-for="(content, index) in props.contents" :key="index">
+          {{ (index + 1) }}. {{ content }}
         </li>
       </ul>
     </div>
   </div>
 </template>
 
-<script setup>
-  defineProps({
-    title: {
-      type: String,
-      required: true
-    },
-    contents: {
-      type: Array,
-      required: true
-    }
-  })
+<script setup lang="ts">
+  const props = defineProps<{ contents: Array<string>, title: string }>();
 </script>
 
 <style scoped>
