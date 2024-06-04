@@ -1,0 +1,19 @@
+{
+  "projects": [{ 
+    "title": "WPFMVVMFileOpen", 
+    "content": "使用 Visual Studio Extension 開發一個小工具，加快程式開發的效率。方便在開發 WPF 的時候，快速的在 View 與 ViewModel 檔案之間進行快速切換", 
+    "images": ["./xxx.png"] 
+  }, { 
+    "title": "AI Git Commit Message", 
+    "content": "使用 HuggingFace 上面的 narySt/codeT5p_CommitMessageGen 模型協助產生 git message，並將此功能做成一個 CLI 工具，只需要下指令，即可自動產生 Commit Message", 
+    "images": ["./xxx.png"] 
+  }, { 
+    "title": "CodeSnippets (Visual Studio Extensions)", 
+    "content": "方便在 Visual Studio 中自定義常用的程式與法 (CRUD)", 
+    "images": ["./xxx.png"] 
+  }, { 
+    "title": "VisualStudioBuildScriptGenerator", 
+    "content": "由於將專案加入到版本管控的時候，通常再次 Clone 下載專案下來的時候，相關的檔案連結會不見；為此，本工具主要的目的是產生一個腳本，Clone 專案下來的時候，執行腳本就能完成編譯的動作，而不會因為缺少東西導致編譯失敗。",
+    "images": ["./xxx.png"] 
+  }]
+}
