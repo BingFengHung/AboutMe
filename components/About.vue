@@ -23,7 +23,7 @@
 import type { Language } from '~/types/language'; 
 import type { Skill } from '~/types/skill'; 
 
-const aboutMe: Array<string> = reactive([])
+const aboutMe: string[] = reactive([])
 const dotNetSkill = reactive({} as Skill)
 const webSkill = reactive({} as Skill)  
 const otherSkill = reactive({} as Skill)

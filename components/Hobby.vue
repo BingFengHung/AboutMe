@@ -12,9 +12,11 @@
 import { reactive } from 'vue';
 
 const hobbies = reactive([
-  '音樂',
-  '籃球',
-  '棒球',
+  "研究新技術",
+  "音樂",
+  "籃球",
+  "棒球",
+  "羽毛球"
 ])
 </script>
 

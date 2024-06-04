@@ -1,30 +1,20 @@
 <template>
   <div class="card" ref="container"> 
-    <div class="card_title"> {{ title }} </div>
-    <img class="card_img" :src="imageUrl"/>  
-    <div class="card_content"> {{ contents }} </div>
+    <div class="card_title"> {{ projectInfo.title }} </div>
+    <img class="card_img" :src="projectInfo.images[0]"/>  
+    <div class="card_content"> {{ projectInfo.content }} </div>
     <div class="card_tag"> 
-      <span v-for="(important, index) in importants" :key="index">{{ important }}</span>
+      <span v-for="(tag, index) in projectInfo.tags" :key="index">{{ tag }}</span>
     </div>
   </div>
 </template>
-<script setup>
-  defineProps({
-    title :{ 
-      type: String
-    },
-    contents: {
-      type: String
-    },
-    importants: {
-      type: Array
-    },
-    imageUrl: {
-      type: String
-    }
-  })
-  
+
+<script setup lang="ts">
+  import type { Project } from '~/types/project';
   const container = ref(null);
+
+  defineProps<{ projectInfo: Project}>();
+
   onMounted(()=> {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

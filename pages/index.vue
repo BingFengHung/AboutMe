@@ -28,8 +28,8 @@
     </section>
     
     <section id="projects">
-      <!-- <ProjectPanel/> -->
-      <div class="block4"></div>
+      <ProjectPanel/>
+      <!-- <div class="block4"></div> -->
     </section>
 
     <Thanks/>

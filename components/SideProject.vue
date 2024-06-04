@@ -1,17 +1,14 @@
 <template>
   <div class="card">
-    <div class="card_title">{{ title }}</div>
-    <img class="card_img" :src="imageUrl"/>
-    <div class="card_content">{{ contents }}</div>
+    <div class="card_title">{{ projectInfo.title }}</div>
+    <img class="card_img" :src="projectInfo.images[0]"/>
+    <div class="card_content">{{ projectInfo.content }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-  defineProps({
-    title: { type: String},
-    contents: { type: String},
-    imageUrl: { type: String}
-  })
+  import type { SideProject } from '~/types/sideProject';
+  defineProps<{ projectInfo: SideProject}>();
 </script>
 
 <style scoped>
