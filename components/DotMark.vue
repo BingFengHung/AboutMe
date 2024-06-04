@@ -5,6 +5,7 @@
   <span></span>
 </div>
 </template>
+
 <style scoped>
 .dot span {
   display: inline-block;

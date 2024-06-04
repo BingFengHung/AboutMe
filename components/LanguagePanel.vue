@@ -11,11 +11,11 @@
 <script setup lang="ts">
 import type { Language } from '~/types/language';
 
-  defineProps({
-    languages: {
-      type: Array<Language>
-    }
-  })
+defineProps({
+  languages: {
+    type: Array<Language>
+  }
+})
 </script>
 
 <style scoped>
