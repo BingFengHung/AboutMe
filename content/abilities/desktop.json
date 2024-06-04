@@ -1,0 +1,10 @@
+{
+  "title": "WPF/Caliburn",
+  "entries": [
+    "開發各式控制器加值軟體，提升客戶操作效率",
+    "Caliburn Micro/MVVM",
+    "AutoFac",
+    "NUnit/Moq"
+  ],
+  "progress": 90
+}

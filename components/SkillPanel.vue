@@ -1,44 +1,32 @@
 <template>
   <div class="container">
     <div class="title">技能</div>
-    <SkillCard :progress="wpf.progress" :title="wpf.title" :contents="wpf.contents"/>
-    <SkillCard :progress="mobile.progress" :title="mobile.title" :contents="mobile.contents"/>
-    <SkillCard :progress="web.progress" :title="web.title" :contents="web.contents"/>
+    <SkillCard :progress="desktop.progress" :title="desktop.title" :contents="desktop.entries"/>
+    <SkillCard :progress="mobile.progress" :title="mobile.title" :contents="mobile.entries"/>
+    <SkillCard :progress="web.progress" :title="web.title" :contents="web.entries"/>
   </div>
 </template>
 
 <script setup lang="ts">
-  const wpf = reactive({
-    title: 'WPF/Caliburn Micro',
-    contents: [
-      '開發各式控制器加值軟體，提升客戶操作效率',
-      'Caliburn Micro/MVVM',
-      'AutoFac',
-      'NUnit/Moq'
-    ],
-    progress: 90
-  })
+  import type { Ability } from '~/types/ability';
+  const desktop = reactive({} as Ability)
+  const web = reactive({} as Ability)
+  const mobile = reactive({} as Ability)
 
-  const mobile = reactive({
-    title: 'Xamarin.Forms/ASP.NET',
-    contents: [
-      '透過手機 APP 可遠端對控制器進行操作，提升人員工作效率與操作便利性',
-      'Xamarin.Forms',
-      'SkiaShap',
-      'ASP.NET 資料串接'
-    ],
-    progress: 65
+  onMounted(async () => {
+    const desktopData = await fetchAbility('desktop') as Ability
+    const webData = await fetchAbility('web') as Ability
+    const mobileData = await fetchAbility('mobile') as Ability
+    
+    Object.assign(desktop, desktopData)
+    Object.assign(web, webData)
+    Object.assign(mobile, mobileData)
   })
-
-  const web = reactive({
-    title: 'Nuxt.js/Vue.js/Node.js',
-    contents: [
-      '開發公司內部網站與客戶 iFactory 網頁版',
-      '前後端專案分離，具備可擴充性與可測試性',
-      '減少頁面載入時間，並優化前端效能'
-    ],
-    progress: 70
-  })
+  
+  const fetchAbility = async (ability: string) => { 
+    const data = await queryContent('abilities', ability).only(['title', 'entries', 'progress']).find()
+    return data[0]
+  }
 
 </script>
 

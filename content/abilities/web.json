@@ -1,0 +1,9 @@
+{
+  "title": "Nuxt.js/Vue.js/Node.js",
+  "entries": [
+    "開發公司內部網站與客戶 iFactory 網頁版",
+    "前後端專案分離，具備可擴充性與可測試性",
+    "減少頁面載入時間，並優化前端效能"
+  ],
+  "progress": 70
+}
