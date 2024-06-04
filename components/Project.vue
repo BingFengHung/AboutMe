@@ -11,22 +11,23 @@
 
 <script setup lang="ts">
   import type { Project } from '~/types/project';
-  const container = ref(null);
+  const container = ref<HTMLElement | null>(null);
 
   defineProps<{ projectInfo: Project}>();
 
   onMounted(()=> {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          container.classList.add('show');
+        if (entry.isIntersecting && container.value) {
+          container.value.classList.add('show');
           observer.disconnect();
         }
       });
     }, {
       threshold: 0.2
     })
-    observer.observe(container.value);
+    
+    if (container.value) observer.observe(container.value);
   })
 </script>
 
