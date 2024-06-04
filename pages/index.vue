@@ -1,7 +1,5 @@
 <template>
   <div>
-    <NuxtPwaManifest/>
-    <NuxtLoadingIndicator/>
     <header>
       <div>Home</div>
       <div class="nav"> 
@@ -23,8 +21,8 @@
     </section>
 
     <section id="skills">
-      <!-- <SkillPanel/> -->
-      <div class="block3"></div>
+      <SkillPanel/>
+      <!-- <div class="block3"></div> -->
     </section>
     
     <section id="projects">
@@ -38,10 +36,7 @@
     </footer>
   </div>
 </template>
-<!-- <script setup>
-//const data = await queryContent('/language-proficiency').only('body').find()
-</script>
- -->
+
 <style>
 body {
   margin: 0px;
