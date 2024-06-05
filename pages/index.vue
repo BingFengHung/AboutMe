@@ -2,6 +2,9 @@
   <div>
     <header>
       <div>Home</div>
+      <font-awesome icon="cog" />
+      <!-- <font-awesome :icon="['fab', 'twitter']" size="4x" /> -->
+      <font-awesome :icon="['fab', 'github']" size="2x"/>
       <div class="nav"> 
         <NuxtLink class="nav-link" v-scroll-to="'introduce'">首頁</NuxtLink>
         <NuxtLink class="nav-link" v-scroll-to="'about'">關於我</NuxtLink>
@@ -16,12 +19,12 @@
     </section>
 
     <section id="about">
-    <!-- <About/> -->
-      <div class="block2"></div>
+    <About/>
+      <!-- <div class="block2"></div> -->
     </section>
 
     <section id="skills">
-      <SkillPanel/>
+      <!-- <SkillPanel/> -->
       <!-- <div class="block3"></div> -->
     </section>
     

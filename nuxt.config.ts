@@ -16,7 +16,14 @@ export default defineNuxtConfig({
     baseURL: '/AboutMe/'
   },
   // modules: ['@vite-pwa/nuxt', "@nuxt/content"],
-  modules: ['@vite-pwa/nuxt', "@nuxt/content" ],
+  modules: ['@vite-pwa/nuxt', "@nuxt/content", "@vesp/nuxt-fontawesome"],
+  fontawesome: {
+    icons: {
+      solid: ['cog'],
+      regular: ['comment' ],
+      brands: ['github', 'twitter'],
+    }
+  },
   pwa: {
     manifest: {
       name: 'About Me PWA',

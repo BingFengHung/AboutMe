@@ -2,6 +2,7 @@
   <div class="container">
     <DotMark></DotMark>
     <div class="title">興趣</div>
+    <!-- <font-awesome icon="cog" /> -->
     <ul class="hobby_list">
       <li v-for="(hobby, index) in hobbies" :key="index">{{ hobby }}</li>
     </ul>
