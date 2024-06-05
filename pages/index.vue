@@ -3,13 +3,24 @@
     <header>
       <div>Home</div>
       <font-awesome icon="cog" />
-      <!-- <font-awesome :icon="['fab', 'twitter']" size="4x" /> -->
       <font-awesome :icon="['fab', 'github']" size="2x"/>
       <div class="nav"> 
-        <NuxtLink class="nav-link" v-scroll-to="'introduce'">首頁</NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'about'">關於我</NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'skills'">技能</NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'projects'">專案</NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'introduce'">
+          <font-awesome :icon="['fas', 'house']"/>
+          首頁
+        </NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'about'">
+          <font-awesome :icon="['fas', 'address-card']"/>
+          關於我
+        </NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'skills'">
+          <font-awesome :icon="['fas', 'bolt']"/>
+          技能
+        </NuxtLink>
+        <NuxtLink class="nav-link" v-scroll-to="'projects'">
+          <font-awesome :icon="['fas', 'lightbulb']"/>
+          專案
+        </NuxtLink>
       </div>
     </header>
 
@@ -19,8 +30,8 @@
     </section>
 
     <section id="about">
-    <About/>
-      <!-- <div class="block2"></div> -->
+    <!-- <About/> -->
+      <div class="block2"></div>
     </section>
 
     <section id="skills">
@@ -29,8 +40,8 @@
     </section>
     
     <section id="projects">
-      <ProjectPanel/>
-      <!-- <div class="block4"></div> -->
+      <!-- <ProjectPanel/> -->
+      <div class="block4"></div>
     </section>
 
     <Thanks/>

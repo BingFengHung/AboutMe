@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   modules: ['@vite-pwa/nuxt', "@nuxt/content", "@vesp/nuxt-fontawesome"],
   fontawesome: {
     icons: {
-      solid: ['cog'],
+      solid: ['cog', 'house', 'address-card', 'bolt', 'lightbulb'],
       regular: ['comment' ],
       brands: ['github', 'twitter'],
     }
