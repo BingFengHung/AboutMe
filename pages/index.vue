@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <header>
       <div>Home</div>
       <font-awesome icon="cog" />
@@ -28,18 +28,9 @@
       <!-- <Introduce/> -->
     </section>
 
-    <section id="about">
-    <!-- <About/> -->
-    </section>
-
-    <section id="skills">
-      <!-- <SkillPanel/> -->
-    </section>
-    
-    <section id="projects">
-      <!-- <ProjectPanel/> -->
-    </section>
-
+    <About id="about"/>
+    <SkillPanel id="skills"/>
+    <ProjectPanel id="projects"/>
     <Thanks/>
     <footer>
       copyright BingFengHung

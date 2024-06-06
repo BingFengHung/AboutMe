@@ -2,4 +2,5 @@
   <NuxtPwaManifest/>
   <NuxtLoadingIndicator/>
   <NuxtPage/>
+  <ScrollToTopButton/>
 </template>
