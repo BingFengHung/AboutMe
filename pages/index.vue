@@ -26,22 +26,18 @@
 
     <section id="introduce">
       <!-- <Introduce/> -->
-      <div class="block1"></div>
     </section>
 
     <section id="about">
     <!-- <About/> -->
-      <div class="block2"></div>
     </section>
 
     <section id="skills">
-      <!-- <SkillPanel/> -->
-      <!-- <div class="block3"></div> -->
+      <SkillPanel/>
     </section>
     
     <section id="projects">
       <!-- <ProjectPanel/> -->
-      <div class="block4"></div>
     </section>
 
     <Thanks/>
@@ -55,23 +51,6 @@
 body {
   margin: 0px;
   position: relative;
-}
-
-.block1 {
-  background-color: red;
-  height: 50vh;
-}
-.block2 {
-  background-color: green;
-  height: 50vh;
-}
-.block3 {
-  background-color: yellow;
-  height: 50vh;
-}
-.block4 {
-  background-color: blue;
-  height: 50vh;
 }
 </style>
 
