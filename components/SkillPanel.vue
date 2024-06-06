@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="title">技能</div>
-    <SkillCard :progress="desktop.progress" :title="desktop.title" :contents="desktop.entries"/>
-    <SkillCard :progress="mobile.progress" :title="mobile.title" :contents="mobile.entries"/>
-    <SkillCard :progress="web.progress" :title="web.title" :contents="web.entries"/>
+    <SkillCard :ability="desktop" />
+    <SkillCard :ability="web" />
+    <SkillCard :ability="mobile" />
   </div>
 </template>
 

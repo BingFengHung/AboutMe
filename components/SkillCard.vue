@@ -1,54 +1,53 @@
 <template>
   <div class="container">
-    <div class="title">{{ props.title }}</div>
+    <div class="title">{{ props.ability.title }}</div>
     <ul class="skill">
-      <li v-for="(content, index) in props.contents" :key="index">{{ content }}</li>
+      <li v-for="(content, index) in props.ability.entries" :key="index">{{ content }}</li>
     </ul>
-  <div class="progress_bar" ref="progressContainer">
-    <div class="progress_in" :style="{ width: progressWidth }">
-      <div class="circle">
-        <div class="progress_text">{{ progress }}%</div>
+    <div class="progress_bar" ref="progressContainer">
+      <div class="progress_in" :style="{ width: progressWidth }">
+        <div class="circle">
+          <div class="progress_text">{{ props.ability.progress }}%</div>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script setup lang="ts">
-  const props = defineProps({
-    progress: {
-      type: Number
-    },
-    title: {
-      type: String
-    },
-    contents: {
-      type: Array
-    }
-  })
-  
+  import type { Ability } from '~/types/ability';
+  const props = defineProps<{ ability: Ability }>();
+
   const progressWidth = ref('0%')
   const progressContainer = ref(null);
   
-  onMounted(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const progressInElement = entry.target.querySelector('.progress_in') as HTMLDivElement | null;
-          if (progressInElement) {
-            progressInElement.style.animation = 'none';
-            progressInElement.offsetHeight;
-            progressInElement.style.animation = '';
-            progressInElement.style.width=`${props.progress}%`;
-            observer.disconnect();
-          }
-        }
-      })
-    })
+
+  const startAnimation = () => {
     if (progressContainer.value) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressInElement = entry.target.querySelector('.progress_in') as HTMLDivElement | null;
+            if (progressInElement) {
+              progressInElement.style.animation = 'none';
+              progressInElement.offsetHeight;
+              progressInElement.style.animation = '';
+              progressInElement.style.width = `${props.ability.progress}%`;
+              observer.disconnect();
+            }
+          }
+        })
+      });
+
       observer.observe(progressContainer.value);
     }
-  })
+  };
+
+  watchEffect(() => {
+    if (props.ability.progress) {
+      startAnimation();
+    }
+  });
 </script>
 
 <style scoped>
@@ -66,7 +65,7 @@
   background-color: #b4be13;
   height: 100%;
   border-radius: 5px;
-  width: 0;
+  width: 0px;
   transition: width 2s ease;
   position: relative;
   display: flex;
