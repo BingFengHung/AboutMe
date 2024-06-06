@@ -3,6 +3,10 @@
     <div class="card_title">{{ projectInfo.title }}</div>
     <img class="card_img" :src="projectInfo.images[0]"/>
     <div class="card_content">{{ projectInfo.content }}</div>
+    <a class="card_link" v-if="projectInfo.link" :href="projectInfo.link">
+      <font-awesome :icon="['fab', 'github']"/>
+      Link
+    </a>
   </div>
 </template>
 
@@ -36,6 +40,22 @@
     
 .card_content {
   margin: 0px 5px;
+}
+
+.card_link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 3px 5px;
+  margin: 1px 2px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+}
+
+.card_link:visited {
+  text-decoration: none;
+  color: white;
 }
 
 </style>

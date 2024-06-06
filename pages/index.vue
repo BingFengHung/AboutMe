@@ -33,7 +33,7 @@
     </section>
 
     <section id="skills">
-      <SkillPanel/>
+      <!-- <SkillPanel/> -->
     </section>
     
     <section id="projects">
