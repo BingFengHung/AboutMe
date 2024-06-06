@@ -33,7 +33,7 @@
     <ProjectPanel id="projects"/>
     <Thanks/>
     <footer>
-      copyright BingFengHung
+      ©BingFengHung
     </footer>
   </div>
 </template>

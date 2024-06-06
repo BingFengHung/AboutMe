@@ -11,13 +11,17 @@
     
     <h3>2016 國立勤益科技大學 工業工程與管理所 碩士</h3>
     <h3>2017 ~ 至今 協鴻工業軟體工程師</h3>
+    <h3>{{ year }}+ 以上開發經驗</h3>
     <a href="https://bingfenghung.github.io/blog">Blog</a>
   </div>
   
 </template>
-<script>
-
+<script setup> 
+  const date = ref(0)
+  const today = new Date()
+  date.value = today.getFullYear() - 2016
 </script>
+
 <style scoped>
 * {
   color: white;
