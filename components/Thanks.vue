@@ -27,7 +27,13 @@ const second = new String(time.getSeconds()).padStart(2, '0')
 const timeText = `${hour}:${minute}:${second}`
 const timeText2 = `${hour}:${minute}:${new String(time.getSeconds() + 2).padStart(2, '0')}`
 
-const lines = [
+interface LinePart {
+  text: string;
+  color?: string;
+  instant?: boolean;
+}
+
+const lines: Array<Array<LinePart>> = [
   [
     { text: '# ', color: '#51a7fc', instant: true },
     { text: "joe@about $ ", color: "#00ff00", instant: true },
@@ -49,7 +55,10 @@ const lines = [
   [{ text: "✔ ", color: '#00ff00'}, { text: "具備與團隊成員協調溝通的能力", color: "#ffffff" }, { text: " All passed", color: "#00ff00" }]
 ];
 
-const displayedLines = ref([]);
+interface LineParts {
+  parts: LinePart[]
+}
+const displayedLines: Array<LineParts> = reactive([]);
 
 onMounted(() => {
   displayLinesWithTypingEffect();
@@ -58,7 +67,7 @@ onMounted(() => {
 const displayLinesWithTypingEffect = () => {
   let currentLineIndex = 0;
 
-  const typeLine = (lineParts, lineIndex, callback) => {
+  const typeLine = (lineParts: LinePart[], lineIndex: number, callback: Function) => {
     let currentPartIndex = 0;
     let currentCharIndex = 0;
 
@@ -66,20 +75,20 @@ const displayLinesWithTypingEffect = () => {
       if (currentPartIndex < lineParts.length) {
         const part = lineParts[currentPartIndex];
         if (part.instant) {
-          if (!displayedLines.value[lineIndex]) {
-            displayedLines.value[lineIndex] = { parts: [] };
+          if (!displayedLines[lineIndex]) {
+            displayedLines[lineIndex] = { parts: [] };
           }
-          displayedLines.value[lineIndex].parts.push(part);
+          displayedLines[lineIndex].parts.push(part);
           currentPartIndex++;
           currentCharIndex = 0;
         } else if (currentCharIndex < part.text.length) {
-          if (!displayedLines.value[lineIndex]) {
-            displayedLines.value[lineIndex] = { parts: [] };
+          if (!displayedLines[lineIndex]) {
+            displayedLines[lineIndex] = { parts: [] };
           }
-          if (!displayedLines.value[lineIndex].parts[currentPartIndex]) {
-            displayedLines.value[lineIndex].parts[currentPartIndex] = { text: '', color: part.color };
+          if (!displayedLines[lineIndex].parts[currentPartIndex]) {
+            displayedLines[lineIndex].parts[currentPartIndex] = { text: '', color: part.color };
           }
-          displayedLines.value[lineIndex].parts[currentPartIndex].text += part.text.charAt(currentCharIndex);
+          displayedLines[lineIndex].parts[currentPartIndex].text += part.text.charAt(currentCharIndex);
           currentCharIndex++;
         } else {
           currentCharIndex = 0;
@@ -100,7 +109,7 @@ const displayLinesWithTypingEffect = () => {
           showNextLine();
         });
       } else {
-        displayedLines.value.push({ parts: lines[currentLineIndex] });
+        displayedLines.push({ parts: lines[currentLineIndex] });
         currentLineIndex++;
         setTimeout(showNextLine, 500); // 每行顯示的時間間隔
       }
@@ -112,8 +121,13 @@ const displayLinesWithTypingEffect = () => {
 </script>
 
 <style scoped>
+.container {
+  min-height: 30vh;
+}
+
 .terminal {
   background-color: #000;
+  min-height: 25vh;
   color: #00ff00;
   font-family: 'Courier New', Courier, monospace;
   padding: 10px;
