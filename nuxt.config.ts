@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // devServer: {
+  //   port: 8080,
+  //   host: '0.0.0.0'
+  // },
   plugins: ['~/plugins/scroll.js'],
   ssr: false,
   app: {
@@ -15,7 +19,6 @@ export default defineNuxtConfig({
     },
     baseURL: '/AboutMe/'
   },
-  // modules: ['@vite-pwa/nuxt', "@nuxt/content"],
   modules: ['@vite-pwa/nuxt', "@nuxt/content", "@vesp/nuxt-fontawesome"],
   fontawesome: {
     icons: {
