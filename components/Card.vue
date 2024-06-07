@@ -45,4 +45,16 @@ li {
   margin-left: 10px;
 }
 
+@media screen and (max-device-width: 480px) { 
+.title {
+  font-size: 1.2rem;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+}
 </style>

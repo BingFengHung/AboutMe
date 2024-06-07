@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
   import type { Skill } from '~/types/skill';
-  //const props = defineProps<{ contents: Array<string>, title: string }>();
   defineProps<{ skillInfo: Skill}>();
 </script>
 
@@ -44,6 +43,17 @@ ul {
 li {
   list-style-type: none;
   margin-left: 6px;
+}
+
+@media screen and (max-device-width: 480px) { 
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+  }
 }
 
 </style>

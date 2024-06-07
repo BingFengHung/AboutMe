@@ -112,4 +112,10 @@
   list-style-type: square;
   margin-top: 5px;
 }
+
+@media screen and (max-device-width: 480px) { 
+  .container .title {
+    font-size: 1.2rem;
+  }
+}
 </style>

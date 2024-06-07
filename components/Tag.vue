@@ -18,4 +18,10 @@
   color: #51a7fc;
   font-weight: bold;
 }
+
+@media screen and (max-device-width: 480px) { 
+  * {
+    font-size: 2rem;
+  }
+}
 </style>

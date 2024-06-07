@@ -43,7 +43,8 @@
     <main>
       <Introduce id="introduce"/>
       <About id="about"/>
-      <!--<SkillPanel id="skills"/>
+      <SkillPanel id="skills"/>
+      <!--
       <ProjectPanel id="projects"/>
       <Thanks/> -->
     </main>

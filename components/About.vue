@@ -73,7 +73,6 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
 }
   
 .about_container header {
-  font-size: 3rem;
   margin-bottom: 10px;
 }
 
@@ -85,5 +84,16 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
 .personal {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-device-width: 480px) { 
+.skills {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+  .personal {
+    display: grid; 
+    grid-template-columns: 1fr;
+  }
 }
 </style>
