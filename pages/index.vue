@@ -2,9 +2,25 @@
   <FullProjectModal v-if="selectedProject || selectedSideProject"></FullProjectModal>
   <div class="wrapper">
     <header class="nav-header">
-      <div>Home</div>
-      <font-awesome icon="cog" />
-      <font-awesome :icon="['fab', 'github']" size="2x"/>
+      <div class="header-container">
+        <div class="log-container">
+          <NuxtLink class="log-link" v-scroll-to="'introduce'">
+            <Logo />
+          </NuxtLink>
+        </div>
+
+        <div class="menus">
+          <div class="menu-icon">
+            <input ref="menuBox" id="menu" name="menu" class="menu_check" type="checkbox">
+            <label for="menu">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
       <div class="nav"> 
         <NuxtLink class="nav-link" v-scroll-to="'introduce'">
           <font-awesome :icon="['fas', 'house']"/>
@@ -26,13 +42,14 @@
     </header>
     <main>
       <Introduce id="introduce"/>
-      <About id="about"/>
+      <!-- <About id="about"/>
       <SkillPanel id="skills"/>
       <ProjectPanel id="projects"/>
-      <Thanks/>
+      <Thanks/> -->
     </main>
     <footer>
-      ©BingFengHung
+      <Logo :isEndTag="true"/>
+      <span>©BingFengHung</span>
     </footer>
   </div>
 </template>
@@ -73,10 +90,38 @@ header li {
   margin: 0px 20px;
 }
 
+.menus {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  margin: 3px 5px;
+  padding: 3px;
+  border: 2px solid #1d7ef7;
+  border-radius: 5px;
+  /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1); */
+  box-shadow: 1px 2px 3px rgba(27, 159, 218, .3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 2px;
+  background-color: #1d7ef7;
+  margin: 5px 0;
+  transition: .4s;
+}
+
+
+.log-container {
+  display: flex;
+}
+
 .nav {
   display: flex;
-  padding: 20px 0px;
 }
+
 .nav-link {
   color: white;
   text-decoration: none;
@@ -88,11 +133,105 @@ header li {
 }
 
 footer {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  align-self: center;
   justify-content: center;
-  height: 50px;
-  background-color: #dadada;
+  align-items: center;
+  height: 8vh;
+  padding: 0px 5px;
+  background-color: #282828;
+}
+
+footer span {
+  color: white;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 1200px) {
+  /* 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。 */
+}
+
+@media screen and (min-width: 1024px) {
+  /*STYLES*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  /* 如果使用者之視窗寬度介於 768px ~ 979px，將會再載入這裡的 CSS。 */
+}
+
+@media screen and (max-width: 767px) {
+  /* 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。*/
+}
+
+@media screen and (max-device-width: 480px) {
+  /* 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。 */
+  .nav-header {
+    
+  }
+  
+  .nav-header .nav { 
+    font-size: 1rem;
+  }
+
+  .menus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    display: inline-block;
+  }
+
+  .menu_check {
+    display: none;
+  }
+  
+  .nav { 
+    display: none;
+  }
+
+  .nav-header {
+    display: grid; 
+    grid-template-columns: 1fr;
+    width: 100vw;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+  }
+  
+  .nav-header:has(.menu-icon > input[type=checkbox]:checked) > .nav {
+    position: absolute;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+  }
+  
+  .nav-link {
+    color: white;
+    font-size: 1.3rem;
+    /* margin-bottom: 10px; */
+    margin: 10px 20px;
+  }
+  
+  header {
+    padding: 0px;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 </style>
