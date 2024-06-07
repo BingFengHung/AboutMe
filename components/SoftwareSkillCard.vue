@@ -43,6 +43,7 @@ ul {
 
 li {
   list-style-type: none;
+  margin-left: 6px;
 }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="title">技能</div>
+    <div class="title"># 技能</div>
     <SkillCard :ability="desktop" />
     <SkillCard :ability="web" />
     <SkillCard :ability="mobile" />

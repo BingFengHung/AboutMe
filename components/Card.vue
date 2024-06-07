@@ -5,7 +5,7 @@
     <div>
       <ul>
         <li v-for="(content, index) in props.contents" :key="index">
-          {{ (index + 1) }}. {{ content }}
+          {{ content }}
         </li>
       </ul>
     </div>
@@ -41,6 +41,8 @@ ul {
 
 li {
   list-style-type: none;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 </style>

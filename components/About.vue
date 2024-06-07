@@ -1,21 +1,21 @@
 <template>
-<div class="container">
-<header>
-  <Tag>關於我</Tag>
-</header> 
-<main>
-  <Card title="個人介紹.html" :contents="aboutMe"></Card>
-  
-  <div class="skills">
-    <SoftwareSkillCard :skill-info="dotNetSkill"/>
-    <SoftwareSkillCard :skill-info="webSkill"/>
-    <SoftwareSkillCard :skill-info="otherSkill"/>
-  </div> 
-  <div class="personal">
-    <LanguagePanel :languages="languages"></LanguagePanel>
-    <Hobby></Hobby>
-  </div>
-</main>
+<div class="about_container">
+  <header>
+    <Tag>關於我</Tag>
+  </header> 
+  <main>
+    <Card title="個人介紹.html" :contents="aboutMe"></Card>
+    
+    <div class="skills">
+      <SoftwareSkillCard :skill-info="dotNetSkill"/>
+      <SoftwareSkillCard :skill-info="webSkill"/>
+      <SoftwareSkillCard :skill-info="otherSkill"/>
+    </div> 
+    <div class="personal">
+      <LanguagePanel :languages="languages"></LanguagePanel>
+      <Hobby></Hobby>
+    </div>
+  </main>
 </div>
 </template>
 
@@ -58,7 +58,6 @@ const fetchAboutMe = async() => {
   return me[0]['entries']
 }
 
-
 const fetchSkills = async (skill: string): Promise<Skill> => {
   const result = await queryContent('aboutme','skills', skill).only(['title', 'skills']).find() as Skill[];
   return result[0]
@@ -67,12 +66,15 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
 </script>
 
 <style scoped>
-.container {
+.about_container {
   background-color: #323643;
+  padding: 0px 10px;
+  padding-bottom: 5px;
 }
   
-header {
+.about_container header {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .skills {

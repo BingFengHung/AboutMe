@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card_title">{{ projectInfo.title }}</div>
-    <img class="card_img" :src="projectInfo.images[0]"/>
+    <img class="card_img" :src="imageLink"/>
     <div class="card_content">{{ projectInfo.content }}</div>
     <a class="card_link" v-if="projectInfo.link" :href="projectInfo.link">
       <font-awesome :icon="['fab', 'github']"/>
@@ -12,7 +12,13 @@
 
 <script setup lang="ts">
   import type { SideProject } from '~/types/sideProject';
-  defineProps<{ projectInfo: SideProject}>();
+  const {projectInfo} = defineProps<{ projectInfo: SideProject}>();
+  
+  const imageLink = computed(() => {
+    if (projectInfo && projectInfo.images && projectInfo.images.length > 0) {
+      return `/AboutMe/images/${projectInfo.images[0]}`
+    }
+  })
 </script>
 
 <style scoped>

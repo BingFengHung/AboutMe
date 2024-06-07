@@ -1,7 +1,7 @@
 <template>
   <div class="card" ref="container"> 
     <div class="card_title"> {{ projectInfo.title }} </div>
-    <img class="card_img" :src="projectInfo.images[0]"/>  
+    <img class="card_img" :src="`/AboutMe/images/${projectInfo.images[0]}`"/>  
     <div class="card_content"> {{ projectInfo.content }} </div>
     <div class="card_tag"> 
       <span v-for="(tag, index) in projectInfo.tags" :key="index">{{ tag }}</span>

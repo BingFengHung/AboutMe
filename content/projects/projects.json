@@ -3,7 +3,7 @@
     "title": "AI 刀具破損檢知", 
     "content": "在加工過程中，若刀具斷裂將造成該工件無效加工；為了避免此問題，透過電流趨勢的判斷，在刀具即將斷裂前提前檢出。", 
     "tags": ["RaspberryPI", "Docker", "C"],
-    "images": ["./xxx.png"]
+    "images": ["Projects/AIToolBreakage/01.png", "Projects/AIToolBreakage/02.png"]
   }, {
     "title": "智慧化工廠系統",
     "content": "蒐集各大廠牌的機台資訊，讓管理者能方便得知當天的稼動率資訊，以此來統計產能。支援 CCD 遠端監控、加工程式傳輸與預覽、整廠機台生產率資訊、主軸電流、完工手機通報功能。",
@@ -13,6 +13,6 @@
     "title": "加工路徑優化",
     "content": "透過讀取客戶 DXF 檔案，並讓使用者選擇加工範圍，一鍵自動轉出加工程式，並針對加工程式的路徑進行優化，與一般加工工法相比，有效提升加工效率 34%",
     "tags": ["GCode", "dxf 檔案解析", "CAD 繪製", "WPF CoreFramework", "Namedpipe"],
-    "images": ["./xxx.png"]
+    "images": ["Projects/ToolPath/01.png", "Projects/ToolPath/02.png"]
   }]
 }
