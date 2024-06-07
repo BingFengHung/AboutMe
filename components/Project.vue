@@ -1,5 +1,5 @@
 <template>
-  <div class="card" ref="container"> 
+  <div class="card" ref="container" @click="ProjectCardClick"> 
     <div class="card_title"> {{ projectInfo.title }} </div>
     <img class="card_img" :src="`/AboutMe/images/${projectInfo.images[0]}`"/>  
     <div class="card_content"> {{ projectInfo.content }} </div>
@@ -11,9 +11,13 @@
 
 <script setup lang="ts">
   import type { Project } from '~/types/project';
-  const container = ref<HTMLElement | null>(null);
+  import { useProjectStore } from '#imports';
 
-  defineProps<{ projectInfo: Project}>();
+  const container = ref<HTMLElement | null>(null);
+  
+  const projectStore = useProjectStore()
+
+  const {projectInfo} = defineProps<{ projectInfo: Project}>();
 
   onMounted(()=> {
     const observer = new IntersectionObserver(entries => {
@@ -29,6 +33,10 @@
     
     if (container.value) observer.observe(container.value);
   })
+  
+  const ProjectCardClick = () => {
+    projectStore.setProject(projectInfo)
+  }
 </script>
 
 <style scoped>

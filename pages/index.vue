@@ -1,4 +1,5 @@
 <template>
+  <FullProjectModal v-if="selectedProject"></FullProjectModal>
   <div class="wrapper">
     <header class="nav-header">
       <div>Home</div>
@@ -35,6 +36,12 @@
     </footer>
   </div>
 </template>
+
+<script setup lang="ts">
+  import { useProjectStore } from '~/stores/useProjectStore';
+  const projectStore = useProjectStore()
+  const selectedProject = computed(() => projectStore.project);
+</script>
 
 <style>
 body {
