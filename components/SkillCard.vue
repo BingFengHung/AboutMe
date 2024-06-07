@@ -114,8 +114,12 @@
 }
 
 @media screen and (max-device-width: 480px) { 
-  .container .title {
+  .title {
     font-size: 1.2rem;
+  }
+  
+  .skill {
+    font-size: 1rem;
   }
 }
 </style>

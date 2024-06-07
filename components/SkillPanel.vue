@@ -44,4 +44,12 @@
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
+
+@media screen and (max-device-width: 480px) {
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+}
 </style>
