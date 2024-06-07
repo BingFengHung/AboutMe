@@ -4,21 +4,31 @@
     <div class="title">興趣</div>
     <!-- <font-awesome icon="cog" /> -->
     <ul class="hobby_list">
-      <li v-for="(hobby, index) in hobbies" :key="index">{{ hobby }}</li>
+      <li v-for="(hobby, index) in hobbies" :key="index">
+        {{ hobby.text }}
+        <font-awesome :icon="hobby.icons"/>
+      </li>
     </ul>
   </div>
 </template>
 
-<script setup language="ts">
+<script setup lang="ts">
 import { reactive } from 'vue';
 
-const hobbies = reactive([
-  "研究新技術",
-  "音樂",
-  "籃球",
-  "棒球",
-  "羽毛球"
-])
+interface MyHobby {
+  text: string;
+  icons: string[];
+} 
+
+const hobbies: Array<MyHobby> = reactive([])
+
+hobbies.push({ text: '研究新技術', icons: ['fas', 'book-open-reader']});
+hobbies.push({ text: '音樂', icons: ['fas', 'icons']});
+hobbies.push({ text: '籃球', icons: ['fas', 'basketball']});
+hobbies.push({ text: '棒球', icons: ['fas', 'baseball']});
+hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
+
+
 </script>
 
 
@@ -43,6 +53,8 @@ const hobbies = reactive([
   font-size: 1.2rem;
   margin: 0px;
   padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .hobby_list li {
