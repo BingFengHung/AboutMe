@@ -150,4 +150,26 @@
   pointer-events: none;
 }
 
+@media screen and (max-device-width: 480px) { 
+  .title { 
+    font-size: 2.5rem; 
+  }
+
+  .avatar_img  {
+    width: 40%;
+  }
+
+  .experience h3{
+    font-size: 1rem;
+    text-shadow: #fc0 1px 0 10px;
+    display: flex;
+    align-items: center;
+  }
+
+.experience h3 span {
+  color: #90c31f;
+  font-size: 2rem;
+  margin-right: 8px
+}
+}
 </style>
