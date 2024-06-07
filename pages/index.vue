@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <header>
+    <header class="nav-header">
       <div>Home</div>
       <font-awesome icon="cog" />
       <font-awesome :icon="['fab', 'github']" size="2x"/>
@@ -23,15 +23,13 @@
         </NuxtLink>
       </div>
     </header>
-
-    <section id="introduce">
-      <!-- <Introduce/> -->
-    </section>
-
-    <About id="about"/>
-    <SkillPanel id="skills"/>
-    <ProjectPanel id="projects"/>
-    <Thanks/>
+    <main>
+      <Introduce id="introduce"/>
+      <About id="about"/>
+      <SkillPanel id="skills"/>
+      <ProjectPanel id="projects"/>
+      <Thanks/>
+    </main>
     <footer>
       ©BingFengHung
     </footer>
@@ -59,6 +57,7 @@ header {
   color: white;
   cursor: pointer;
   z-index: 2;
+  height: 8vh;
 }
 
 header li {
