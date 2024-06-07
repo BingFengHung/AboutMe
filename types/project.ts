@@ -1,3 +1,5 @@
+import type { SkillType } from "./skillType";
+
 export interface Project {
   title: string;
   content: string;
@@ -6,9 +8,3 @@ export interface Project {
   skillType: SkillType
 }
 
-export enum SkillType {
-  Web = 'Web',
-  Mobile = 'Mobile',
-  Desktop = 'Desktop',
-  AI ='AI'
-}

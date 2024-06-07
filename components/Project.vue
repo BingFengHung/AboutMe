@@ -54,6 +54,7 @@
   animation: drop .5s forwards;
   opacity: 0.6;
   transform: translateY(-100px);
+  cursor: pointer;
 }
 
 .card.show {
@@ -80,9 +81,6 @@
   }
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
 
 .card_title {
   font-weight: bold;
@@ -113,5 +111,9 @@ span {
   padding: 5px 10px;
   margin: 2px;
   font-size: .8rem;
+}
+
+.card:hover {
+  transform: scale(1.03) !important;
 }
 </style>

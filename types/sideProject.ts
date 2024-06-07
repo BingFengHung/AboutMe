@@ -1,6 +1,5 @@
-export interface SideProject {
-  title: string;
-  content: string;
-  images: string[];
+import type { Project } from "./project";
+
+export interface SideProject extends Project {
   link?: string;
 }

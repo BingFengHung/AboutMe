@@ -2,23 +2,29 @@
   "projects": [{ 
     "title": "WPFMVVMFileOpen", 
     "content": "使用 Visual Studio Extension 開發一個小工具，加快程式開發的效率。方便在開發 WPF 的時候，快速的在 View 與 ViewModel 檔案之間進行快速切換", 
-    "images": ["SideProjects/WPFMVVMFileOpen/WPFMVVMFileOpen01.png", "SideProjects/WPFMVVMFileOpen/WPFMVVMFileOpen02.png"]
+    "images": ["SideProjects/WPFMVVMFileOpen/WPFMVVMFileOpen01.png", "SideProjects/WPFMVVMFileOpen/WPFMVVMFileOpen02.png"],
+    "skillType": "VisualStudioExtension"
   }, { 
     "title": "AI Git Commit Message", 
     "content": "使用 HuggingFace 上面的 narySt/codeT5p_CommitMessageGen 模型協助產生 git message，並將此功能做成一個 CLI 工具，只需要下指令，即可自動產生 Commit Message", 
-    "images": ["./xxx.png"] 
+    "images": ["./xxx.png"],
+    "skillType": "AI"
   }, { 
     "title": "CodeSnippets (Visual Studio Extensions)", 
     "content": "方便在 Visual Studio 中自定義常用的程式與法 (CRUD)", 
     "images": ["SideProjects/CodeSnippets/CodeSnippets01.png", "CodeSnippets/CodeSnippets02.png", "CodeSnippets/CodeSnippets03.png"],
-    "link": "https://github.com/BingFengHung/CodeSnippets"
+    "link": ["https://github.com/BingFengHung/CodeSnippets"],
+    "skillType": "VisualStudioExtension"
+
   }, { 
     "title": "VisualStudioBuildScriptGenerator", 
     "content": "由於將專案加入到版本管控的時候，通常再次 Clone 下載專案下來的時候，相關的檔案連結會不見；為此，本工具主要的目的是產生一個腳本，Clone 專案下來的時候，執行腳本就能完成編譯的動作，而不會因為缺少東西導致編譯失敗。",
-    "images": ["SideProjects/VisualStudioBuildScriptGenerator/01.png", "SideProjects/VisualStudioBuildScriptGenerator/02.png", "SideProjects/VisualStudioBuildScriptGenerator/03.png"] 
+    "images": ["SideProjects/VisualStudioBuildScriptGenerator/01.png", "SideProjects/VisualStudioBuildScriptGenerator/02.png", "SideProjects/VisualStudioBuildScriptGenerator/03.png"] ,
+    "skillType": "VisualStudio"
   }, {
     "title": "ColorPicker", 
     "content": "專案開發通常有企業配色，因此此套件的目的是讓使用者能夠自定義常用的顏色 hex 碼，可快速插入到程式碼中",
-    "images": ["SideProjects/ColorPicker/ColorPicker01.png", "SideProjects/ColorPicker/ColorPicker02.png", "SideProjects/ColorPicker/ColorPicker03.png"]
+    "images": ["SideProjects/ColorPicker/ColorPicker01.png", "SideProjects/ColorPicker/ColorPicker02.png", "SideProjects/ColorPicker/ColorPicker03.png"],
+    "skillType": "VisualStudioExtension"
   }]
 }

@@ -25,12 +25,12 @@
 
 <script setup lang="ts">
   import { useProjectStore } from '#imports';
-  import { SkillType } from '~/types/project'
+  import { SkillType } from '~/types/skillType'
   const projectStore = useProjectStore()
   const extension = ref('')
   const iconLink = ref('')
   
-  const project = projectStore.project
+  const project = projectStore.project || projectStore.sideProject
   
   if (project && project.skillType) {
     switch (project.skillType) {
@@ -57,6 +57,7 @@
 
   const Close = () => {
     projectStore.setProject(null)
+    projectStore.setSideProject(null)
   }
 </script>
 
@@ -79,6 +80,9 @@
 
 .inner {
   background-color: white;
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  box-shadow: 2px 3px 4px gray;
 }
 
 .inner_title {
@@ -135,26 +139,27 @@
 .proj-card header img {
   width: 2.5%;
   height: 2.5%;
-  margin-right: 10px;
+  margin: 0px 5px;
 }
 
 .proj-content {
-  margin: 5px;
+  margin: 5px 15px;
   margin-bottom: 10px;
 }
 
 .proj-images {
   position: relative;
-  margin: 5px;
-  display: inline-block;
-  overflow: auto;
-  height: 65vh;
+  margin: 5px 15px;
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  height: 65%;
   text-align: center;
+  overflow: auto;
 }
   
 .proj-images img {
-  display: inline-block;
-  height: auto;
+  width: auto;
   margin-bottom: 10px;
   text-align: center;
   border: 1px solid #1b9fda;

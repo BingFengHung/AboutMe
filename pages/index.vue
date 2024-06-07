@@ -1,5 +1,5 @@
 <template>
-  <FullProjectModal v-if="selectedProject"></FullProjectModal>
+  <FullProjectModal v-if="selectedProject || selectedSideProject"></FullProjectModal>
   <div class="wrapper">
     <header class="nav-header">
       <div>Home</div>
@@ -41,6 +41,7 @@
   import { useProjectStore } from '~/stores/useProjectStore';
   const projectStore = useProjectStore()
   const selectedProject = computed(() => projectStore.project);
+  const selectedSideProject = computed(() => projectStore.sideProject);
 </script>
 
 <style>

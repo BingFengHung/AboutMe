@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="SideProjectCardClick">
     <div class="card_title">{{ projectInfo.title }}</div>
     <img class="card_img" :src="imageLink"/>
     <div class="card_content">{{ projectInfo.content }}</div>
@@ -12,13 +12,21 @@
 
 <script setup lang="ts">
   import type { SideProject } from '~/types/sideProject';
-  const {projectInfo} = defineProps<{ projectInfo: SideProject}>();
+  import { useProjectStore } from '#imports';
+  
+  const { projectInfo } = defineProps<{ projectInfo: SideProject}>();
+  
+  const projectStore = useProjectStore()
   
   const imageLink = computed(() => {
     if (projectInfo && projectInfo.images && projectInfo.images.length > 0) {
       return `/AboutMe/images/${projectInfo.images[0]}`
     }
   })
+  
+  const SideProjectCardClick = () => {
+    projectStore.setSideProject(projectInfo)
+  }
 </script>
 
 <style scoped>
@@ -31,6 +39,10 @@
   justify-content: flex-start;
   flex-direction: column;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card_title {
