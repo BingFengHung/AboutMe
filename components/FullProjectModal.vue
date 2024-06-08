@@ -3,9 +3,9 @@
     <div class="inner">
       <div class="inner_title">
         <div class="proj-title">
-          <span class="tag"><&nbsp;</span>
-          <span class="content">{{  project?.title }}</span>
-          <span class="tag">&nbsp;/></span>
+          <!-- <span class="tag"><&nbsp;</span> -->
+          <span>#&nbsp;</span><span class="content">{{  project?.title }}</span>
+          <!-- <span class="tag">&nbsp;/></span> -->
         </div>
         <div class="close_btn" @click="Close">
           <font-awesome :icon="['fas', 'xmark']" />
@@ -13,13 +13,17 @@
       </div>
       <div class="proj-card">
         <header><img :src="`/AboutMe/icons/${iconLink}`"/>{{ project?.skillType }}{{ extension }}</header>
-        <div class="proj-content">{{  project?.content }}</div>
-        <div class="proj-images">
-          <img v-for="(img, index) in project?.images" :key="index" :src="`/AboutMe/images/${img}`"/>
-        </div>
-        <div class="proj-skill">
-          <span v-for="(skill, index) in project?.tags" :key=index>{{ skill }}</span>
-        </div>
+        <main class="proj-card-body">
+          <div class="proj-card-body-content">{{  project?.content }}</div>
+          <div class="proj-card-body-images">
+            <img v-for="(img, index) in project?.images" :key="index" :src="`/AboutMe/images/${img}`"/>
+          </div>
+        </main>
+        <footer>
+          <div class="proj-skill">
+            <span v-for="(skill, index) in project?.tags" :key=index>{{ skill }}</span>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -128,12 +132,19 @@
   background-color: #252525;
   border-radius: 5px 5px 0px 0px;
   font-size: 1rem;
-  padding: 3px 5px;
+  padding: 5px 5px;
 }
 
 .proj-title {
   margin: 5px;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.proj-title span:nth-child(1) {
+  font-weight: 900;
+  color: #1b9fda;
 }
 
 .proj-title .tag {
@@ -144,6 +155,7 @@
 
 .proj-title .content {
   font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .proj-card {
@@ -152,7 +164,7 @@
   display: grid;
   grid-template-rows: auto auto 1fr;
   background-color: #1e1e1e;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 3px 3px;
   color: white;
   margin: 5px;
 }
@@ -169,6 +181,31 @@
   margin: 0px 5px;
 }
 
+.proj-card-body  {
+  overflow: auto;
+  margin: 10px;
+}
+
+.proj-card-body-content { 
+  margin-bottom: 15px;
+}
+
+.proj-card-body-images {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  text-align: center;
+}
+
+.proj-card-body-images img {
+  text-align: center;
+  margin-bottom: 10px;
+  border: 1px solid #1b9fda;
+  border-radius: 5px;
+}
+
 .proj-content {
   margin: 5px 15px;
   margin-bottom: 10px;
@@ -183,13 +220,13 @@
   text-align: center;
 }
   
-.proj-images img {
+.proj-card-body-images img {
   width: auto;
   max-width: 50vw;
-  margin-bottom: 10px;
-  text-align: center;
   border: 1px solid #1b9fda;
   border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
   
 .proj-skill {
@@ -211,11 +248,13 @@
   .proj-card {
     width: 80vw;
     height: 60vh;
-    overflow: auto;
+    /* overflow: auto; */
   }
   
   .proj-title .tag {
     font-size: 1rem;
+    color: #b4be13;
+    font-weight: bold;
   }
 
   .proj-title .content {
@@ -223,7 +262,7 @@
   }
 
   .proj-content {
-    font-size: .9rem;
+    font-size: 1rem;
   }
 
   .proj-skill {
@@ -238,7 +277,7 @@
   .proj-card {
     width: 60vw;
     height: 70vh;
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .proj-skill {
@@ -253,7 +292,7 @@
   .proj-card {
     width: 60vw;
     height: 50vh;
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .proj-skill {
@@ -269,7 +308,7 @@
   .proj-card {
     width: 70vw;
     height: 80vh;
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .proj-images img {
