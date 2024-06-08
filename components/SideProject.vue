@@ -1,11 +1,12 @@
 <template>
   <div class="card" @click="SideProjectCardClick">
     <div class="card_title">{{ projectInfo.title }}</div>
-    <img class="card_img" :src="imageLink"/>
+    <div class="card_img_container">
+      <img class="card_img" :src="imageLink"/>
+    </div>
     <div class="card_content">{{ projectInfo.content }}</div>
     <a class="card_link" v-if="projectInfo.link" :href="projectInfo.link">
-      <font-awesome :icon="['fab', 'github']"/>
-      Link
+      <font-awesome :icon="['fab', 'github']"/> Go
     </a>
   </div>
 </template>
@@ -49,11 +50,17 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
-    
-.card_img {
+
+.card_img_container {
   width: 240px;
   height: 160px;
   margin: 10px 0px;
+  overflow: hidden;
+}
+    
+.card_img {
+  width: 240px;
+  height: auto;
 }
     
 .card_content {
@@ -62,7 +69,7 @@
 
 .card_link {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 1.2rem;
   padding: 3px 5px;
   margin: 1px 2px;

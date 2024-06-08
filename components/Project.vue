@@ -1,7 +1,9 @@
 <template>
   <div class="card" ref="container" @click="ProjectCardClick"> 
     <div class="card_title"> {{ projectInfo.title }} </div>
-    <img class="card_img" :src="`/AboutMe/images/${projectInfo.images[0]}`"/>  
+    <div class="card_img_container">
+      <img class="card_img" :src="`/AboutMe/images/${projectInfo.images[0]}`"/>  
+    </div>
     <div class="card_content"> {{ projectInfo.content }} </div>
     <div class="card_tag"> 
       <span v-for="(tag, index) in projectInfo.tags" :key="index">{{ tag }}</span>
@@ -91,15 +93,22 @@
   margin: 0px 5px;
 }
 
-.card_img {
+.card_img_container {
   width: 240px;
   height: 160px;
+  overflow: hidden;
+  margin: 10px 0px;
+}
+
+.card_img {
+  width: 240px;
+  height: auto;
   margin: 10px 0px;
 }
 
 .card_tag {
   margin: 10px 0px;
-  align-self: self-start;
+  align-self: center;
 }
 
 span {
