@@ -176,16 +176,16 @@
 
 .proj-images {
   position: relative;
-  margin: 5px 15px;
+  margin: auto;
   display: flex;
   width: auto;
   flex-direction: column;
   text-align: center;
-  overflow: auto;
 }
   
 .proj-images img {
   width: auto;
+  max-width: 50vw;
   margin-bottom: 10px;
   text-align: center;
   border: 1px solid #1b9fda;
@@ -222,16 +222,6 @@
     font-size: 1rem;
   }
 
-  .proj-images {
-    position: relative;
-    margin: 5px 15px;
-    display: flex;
-    width: auto;
-    flex-direction: column;
-    text-align: center;
-    overflow: auto;
-  }
-  
   .proj-content {
     font-size: .9rem;
   }
@@ -280,6 +270,13 @@
     width: 70vw;
     height: 80vh;
     overflow: auto;
+  }
+
+  .proj-images img {
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #1b9fda;
+    border-radius: 5px;
   }
 }
 

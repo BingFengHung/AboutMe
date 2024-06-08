@@ -12,7 +12,7 @@
   }, { 
     "title": "CodeSnippets (Visual Studio Extensions)", 
     "content": "方便在 Visual Studio 中自定義常用的程式與法 (CRUD)", 
-    "images": ["SideProjects/CodeSnippets/CodeSnippets01.png", "CodeSnippets/CodeSnippets02.png", "CodeSnippets/CodeSnippets03.png"],
+    "images": ["SideProjects/CodeSnippets/CodeSnippets01.png", "SideProjects/CodeSnippets/CodeSnippets02.png", "SideProjects/CodeSnippets/CodeSnippets03.png"],
     "link": ["https://github.com/BingFengHung/CodeSnippets"],
     "skillType": "VisualStudioExtension"
 
