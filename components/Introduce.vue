@@ -212,4 +212,12 @@
     margin-right: 8px
   }
 }
+
+@media screen and (min-width: 980px) {
+  .avatar_img  {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
 </style>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 512px;
+      height: 512px;
+      background-color: #1d7ef7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    span {
+      font-size: 8rem;
+      color: white;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .bracket {
+      color: #71b259;
+      font-weight: bold;
+    }
+    
+    .container div::before {
+      position: absolute;
+      content: '';
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 9px;
+      background-color: #fff;
+    }
+
+    .container div::after {
+      position: absolute;
+      content: '';
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 9px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="saveButton" >Save as Image</button>
+  <div id="capture" class="container">
+    <div>
+      <span class="bracket">&lt; </span>
+      <span class="joe">
+          <span class="letter">Joe</span>
+      </span>
+      <span>
+          <span class="bracket"> /&gt;</span>
+      </span>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script>
+        document.getElementById('saveButton').addEventListener('click', function() { 
+          html2canvas(document.getElementById('capture'), { 
+            onrendered: function(canvas) { 
+              // Convert canvas to image 
+              var link = document.createElement('a'); 
+              link.href = canvas.toDataURL('image/png'); 
+              link.download = 'capture.png'; 
+              link.click(); 
+            } 
+          }); 
+        });
+  </script>
+  </div>
+</body>
+</html>
