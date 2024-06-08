@@ -110,8 +110,20 @@ span {
   width: 8px;
   height: 10px;
   background: linear-gradient(to top, red, yellow);
-  border-radius: 50% 50% 0 0;
+  border-radius: 50% 50% 0% 0%; 
   animation: fireAnimation 0.5s infinite;
+}
+  
+.rocket-fire::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 6px;
+  background: linear-gradient(to top, yellow, red);
+  /* border-radius: 50% 50% -50% -50%; */
 }
 
 @keyframes fireAnimation {

@@ -87,4 +87,19 @@ const fetchSideProjects = async() => {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
+
+
+@media screen and (max-device-width: 480px) { 
+  .project_container__body { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+  }
+  .sideProject_container__body {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+    
+  }
+}
 </style>

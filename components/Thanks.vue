@@ -123,6 +123,7 @@ const displayLinesWithTypingEffect = () => {
 <style scoped>
 .container {
   min-height: 30vh;
+  margin-bottom: 10px;
 }
 
 .terminal {
@@ -158,5 +159,15 @@ const displayLinesWithTypingEffect = () => {
 
 .line {
   white-space: pre-wrap; /* 保留空格和換行 */
+}
+
+@media screen and (max-device-width: 480px) { 
+  .terminal {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+  .terminal_body {
+    padding: 0px;
+  }
 }
 </style>

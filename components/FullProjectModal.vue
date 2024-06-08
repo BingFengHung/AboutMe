@@ -58,13 +58,27 @@
   const Close = () => {
     projectStore.setProject(null)
     projectStore.setSideProject(null)
+    enableScroll()
   }
+  
+  const enableScroll = () => {
+    document.body.style.overflow ='';
+  }
+  
+  const disableScroll = () => {
+    document.body.style.overflow ='hidden';
+  }
+
+  onMounted(() => {
+    disableScroll();
+  })
 </script>
 
 <style scoped>
 * {
   box-sizing: border-box;
 }
+
 .outer {
   background-color: rgba(0, 0, 0, .8);
   height: 100vh;
@@ -76,6 +90,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.outer.no-scroll {
+  
 }
 
 .inner {
@@ -171,6 +190,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .proj-skill span {
   margin: 5px 10px;
   background-color: #b4be13;
@@ -179,5 +199,44 @@
   padding: 2px 10px;
   font-size: 1rem;
 }
+    
+@media screen and (max-device-width: 480px) { 
+  .proj-card {
+    width: 90vw;
+    height: 90vw;
+    overflow: auto;
+  }
+  
+  .proj-title .tag {
+    font-size: 1rem;
+  }
+
+  .proj-title .content {
+    font-size: 1rem;
+  }
+
+  .proj-images {
+    position: relative;
+    margin: 5px 15px;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    height: 60%;
+    text-align: center;
+    overflow: auto;
+  }
+  
+  .proj-content {
+    font-size: .9rem;
+  }
+
+  .proj-skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
   
 </style>

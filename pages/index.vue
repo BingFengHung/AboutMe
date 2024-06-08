@@ -44,9 +44,8 @@
       <Introduce id="introduce"/>
       <About id="about"/>
       <SkillPanel id="skills"/>
-      <!--
       <ProjectPanel id="projects"/>
-      <Thanks/> -->
+      <Thanks/> 
     </main>
     <footer>
       <Logo :isEndTag="true"/>
