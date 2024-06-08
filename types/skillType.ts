@@ -3,6 +3,6 @@ export enum SkillType {
   Mobile = 'Mobile',
   Desktop = 'Desktop',
   AI ='AI',
-  VisualStudioExtension = 'extension',
+  VisualStudioExtension = 'VisualStudioExtension',
   VisualStudio = 'VisualStudio'
 }

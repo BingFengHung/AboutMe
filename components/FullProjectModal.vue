@@ -7,7 +7,9 @@
           <span class="content">{{  project?.title }}</span>
           <span class="tag">&nbsp;/></span>
         </div>
-        <div class="close_btn" @click="Close">X</div>
+        <div class="close_btn" @click="Close">
+          <font-awesome :icon="['fas', 'xmark']" />
+        </div>
       </div>
       <div class="proj-card">
         <header><img :src="`/AboutMe/icons/${iconLink}`"/>{{ project?.skillType }}{{ extension }}</header>
@@ -49,6 +51,14 @@
       case SkillType.AI:
         extension.value = '.py'
         iconLink.value = 'python.png'
+        break;
+      case SkillType.VisualStudioExtension:
+        extension.value = '.ext'
+        iconLink.value = 'windows.png'
+        break;
+      case SkillType.VisualStudio:
+        extension.value = '.ext'
+        iconLink.value = 'visualstudio.png'
         break;
       default:
         extension.value = '.c'
@@ -93,10 +103,6 @@
   overflow: hidden;
 }
 
-.outer.no-scroll {
-  
-}
-
 .inner {
   background-color: white;
   border-radius: 5px 5px 0 0;
@@ -113,8 +119,8 @@
 .inner_title .close_btn {
   margin: 0px 10px;
   background-color: #dadada;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -141,8 +147,10 @@
 }
 
 .proj-card {
-  width: 60vw;
-  height: 55vw;
+  width: 80vw;
+  height: 60vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
   background-color: #1e1e1e;
   border-radius: 5px 5px 0px 0px;
   color: white;
@@ -156,8 +164,8 @@
 }
 
 .proj-card header img {
-  width: 2.5%;
-  height: 2.5%;
+  width: 20px;
+  height: 20px;
   margin: 0px 5px;
 }
 
@@ -172,7 +180,6 @@
   display: flex;
   width: auto;
   flex-direction: column;
-  height: 65%;
   text-align: center;
   overflow: auto;
 }
@@ -202,8 +209,8 @@
     
 @media screen and (max-device-width: 480px) { 
   .proj-card {
-    width: 90vw;
-    height: 90vw;
+    width: 80vw;
+    height: 60vh;
     overflow: auto;
   }
   
@@ -221,7 +228,6 @@
     display: flex;
     width: auto;
     flex-direction: column;
-    height: 60%;
     text-align: center;
     overflow: auto;
   }
@@ -241,7 +247,7 @@
 @media screen and (min-width: 767px) {
   .proj-card {
     width: 60vw;
-    height: 70vw;
+    height: 70vh;
     overflow: auto;
   }
 
@@ -256,7 +262,7 @@
 @media screen and (min-width: 980px) {
   .proj-card {
     width: 60vw;
-    height: 50vw;
+    height: 50vh;
     overflow: auto;
   }
 
@@ -266,6 +272,15 @@
     align-items: center;
     flex-wrap: wrap;
   }
-
 }
+
+@media screen and (min-width: 1024px) {
+  /*STYLES*/
+  .proj-card {
+    width: 70vw;
+    height: 80vh;
+    overflow: auto;
+  }
+}
+
 </style>
