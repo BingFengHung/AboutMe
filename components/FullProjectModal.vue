@@ -238,5 +238,34 @@
   }
 }
 
-  
+@media screen and (min-width: 767px) {
+  .proj-card {
+    width: 60vw;
+    height: 70vw;
+    overflow: auto;
+  }
+
+  .proj-skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .proj-card {
+    width: 60vw;
+    height: 50vw;
+    overflow: auto;
+  }
+
+  .proj-skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+}
 </style>

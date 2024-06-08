@@ -102,4 +102,33 @@ const fetchSideProjects = async() => {
     
   }
 }
+
+@media screen and (min-width: 481px) {
+  .project_container__body { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+  }
+  .sideProject_container__body {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+    
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .project_container__body { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+  }
+  .sideProject_container__body {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    
+  }
+}
+
 </style>

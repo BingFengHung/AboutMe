@@ -60,4 +60,22 @@ hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
 .hobby_list li {
   margin: 20px;
 }
+        
+@media screen and (min-width: 481px) {
+  .hobby_list li {
+    margin: 5px;
+  }
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  li {
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+}
 </style>

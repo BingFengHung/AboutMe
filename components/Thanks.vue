@@ -161,6 +161,16 @@ const displayLinesWithTypingEffect = () => {
   white-space: pre-wrap; /* 保留空格和換行 */
 }
 
+@media screen and (min-width: 481px) {
+  .terminal {
+    width: 90%;
+    font-size: 1rem;
+  }
+  .terminal_body {
+    padding: 0px;
+  }
+}
+
 @media screen and (max-device-width: 480px) { 
   .terminal {
     width: 90%;

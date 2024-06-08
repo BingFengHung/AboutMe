@@ -7,9 +7,9 @@
     <Card title="個人介紹.html" :contents="aboutMe"></Card>
     
     <div class="skills">
-      <SoftwareSkillCard :skill-info="dotNetSkill"/>
-      <SoftwareSkillCard :skill-info="webSkill"/>
-      <SoftwareSkillCard :skill-info="otherSkill"/>
+      <SoftwareSkillCard class="skill1" :skill-info="dotNetSkill"/>
+      <SoftwareSkillCard class="skill2" :skill-info="webSkill"/>
+      <SoftwareSkillCard class="skill3" :skill-info="otherSkill"/>
     </div> 
     <div class="personal">
       <LanguagePanel :languages="languages"></LanguagePanel>
@@ -87,13 +87,81 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
 }
 
 @media screen and (max-device-width: 480px) { 
-.skills {
-  display: grid;
-  grid-template-columns: 1fr;
-}
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   .personal {
     display: grid; 
     grid-template-columns: 1fr;
   }
+}
+
+@media screen and (min-width: 481px) {
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 定義兩列，寬度均等 */
+    grid-template-rows: auto auto; /* 定義兩行，自動調整高度 */
+  }
+  
+  .skill1 {
+    grid-column: 1 / 2;;
+    grid-row: 1 / 2;;
+  }
+  
+  .skill2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .skill3 {
+    grid-column: 1 / 3;
+    grid-row:  2/ 3;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .skill1 {
+    grid-column: 1 / 2;;
+    grid-row: 1 / 2;;
+  }
+  
+  .skill2 {
+    grid-column: 2 / 3;;
+    grid-row: 1 / 2;;
+  }
+  
+  .skill3 {
+    grid-column: 3 / 4;;
+    grid-row: 1 / 2;;
+  }
+}
+
+@media screen and (min-width: 980px) {
+   .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .skill1 {
+    grid-column: 1 / 2;;
+    grid-row: 1 / 2;;
+  }
+  
+  .skill2 {
+    grid-column: 2 / 3;;
+    grid-row: 1 / 2;;
+  }
+  
+  .skill3 {
+    grid-column: 3 / 4;;
+    grid-row: 1 / 2;;
+  }
+ 
 }
 </style>

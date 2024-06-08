@@ -164,20 +164,12 @@ footer span {
   /*STYLES*/
 }
 
-@media screen and (min-width: 768px) and (max-width: 979px) {
-  /* 如果使用者之視窗寬度介於 768px ~ 979px，將會再載入這裡的 CSS。 */
-}
 
-@media screen and (max-width: 767px) {
-  /* 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。*/
-}
+
+
 
 @media screen and (max-device-width: 480px) {
   /* 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。 */
-  .nav-header {
-    
-  }
-  
   .nav-header .nav { 
     font-size: 1rem;
   }
@@ -238,6 +230,26 @@ footer span {
     display: flex;
     justify-content: space-between;
   }
+}
+
+@media screen and (min-width: 481px) {
+  .nav-header .nav { 
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    margin: 0px 10px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  /* 如果使用者之視窗寬度 <= 768px，將會再載入這裡的 CSS。*/
+  .nav-header .nav { 
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
 }
 
 </style>

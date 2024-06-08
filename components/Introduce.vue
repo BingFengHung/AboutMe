@@ -150,6 +150,7 @@
   pointer-events: none;
 }
 
+
 @media screen and (max-device-width: 480px) { 
   .title { 
     font-size: 2.5rem; 
@@ -166,10 +167,49 @@
     align-items: center;
   }
 
-.experience h3 span {
-  color: #90c31f;
-  font-size: 2rem;
-  margin-right: 8px
+  .experience h3 span {
+    color: #90c31f;
+    font-size: 2rem;
+    margin-right: 8px
+  }
 }
+
+@media screen and (min-width: 481px) {
+  .title { 
+    font-size: 2.5rem; 
+  }
+  .avatar_img  {
+    width: 40%;
+  }
+
+  .experience h3{
+    font-size: 1.3rem;
+  }
+
+  .experience h3 span {
+    color: #90c31f;
+    font-size: 1.5rem;
+    margin-right: 8px
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .title { 
+    font-size: 2.5rem; 
+  }
+
+  .avatar_img  {
+    width: 30%;
+  }
+
+  .experience h3{
+    font-size: 1.2rem;
+  }
+
+  .experience h3 span {
+    color: #90c31f;
+    font-size: 1.5rem;
+    margin-right: 8px
+  }
 }
 </style>

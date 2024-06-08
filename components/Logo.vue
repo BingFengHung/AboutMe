@@ -94,7 +94,15 @@ onMounted(() => {
     }
 }
 
+
 @media screen and (max-device-width: 480px) {
+  /* 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。 */
+    .code-container {
+      font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 481px) {
   /* 如果使用者之裝置寬度 <= 480px，將會再載入這裡的 CSS。 */
     .code-container {
       font-size: 2rem;
