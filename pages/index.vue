@@ -4,7 +4,7 @@
     <header class="nav-header">
       <div class="header-container">
         <div class="log-container">
-          <NuxtLink class="log-link" v-scroll-to="'introduce'">
+          <NuxtLink class="log-link" v-scroll-to="'introduce'" @click="closeNav">
             <Logo />
           </NuxtLink>
         </div>
@@ -22,19 +22,19 @@
       </div>
 
       <div class="nav"> 
-        <NuxtLink class="nav-link" v-scroll-to="'introduce'">
+        <NuxtLink class="nav-link" v-scroll-to="'introduce'" @click="closeNav">
           <font-awesome :icon="['fas', 'house']"/>
           首頁
         </NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'about'">
+        <NuxtLink class="nav-link" v-scroll-to="'about'" @click="closeNav">
           <font-awesome :icon="['fas', 'address-card']"/>
           關於我
         </NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'skills'">
+        <NuxtLink class="nav-link" v-scroll-to="'skills'" @click="closeNav">
           <font-awesome :icon="['fas', 'bolt']"/>
           技能
         </NuxtLink>
-        <NuxtLink class="nav-link" v-scroll-to="'projects'">
+        <NuxtLink class="nav-link" v-scroll-to="'projects'" @click="closeNav">
           <font-awesome :icon="['fas', 'lightbulb']"/>
           專案
         </NuxtLink>
@@ -59,6 +59,12 @@
   const projectStore = useProjectStore()
   const selectedProject = computed(() => projectStore.project);
   const selectedSideProject = computed(() => projectStore.sideProject);
+  const menuBox = ref<HTMLInputElement | null>(null)
+
+  const closeNav = () => {
+    if (menuBox.value) 
+        menuBox.value.checked = false
+  }
 </script>
 
 <style>
