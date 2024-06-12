@@ -7,7 +7,7 @@
   }, { 
     "title": "AI Git Commit Message", 
     "content": "使用 HuggingFace 上面的 narySt/codeT5p_CommitMessageGen 模型協助產生 git message，並將此功能做成一個 CLI 工具，只需要下指令，即可自動產生 Commit Message", 
-    "images": ["./xxx.png"],
+    "images": ["./SideProjects/AIGitCommitMessage/01.png", "./SideProjects/AIGitCommitMessage/02.png"],
     "skillType": "AI"
   }, { 
     "title": "CodeSnippets (Visual Studio Extensions)", 
