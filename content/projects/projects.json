@@ -9,7 +9,7 @@
     "title": "智慧化工廠系統",
     "content": "蒐集各大廠牌的機台資訊，讓管理者能方便得知當天的稼動率資訊，以此來統計產能。支援 CCD 遠端監控、加工程式傳輸與預覽、整廠機台生產率資訊、主軸電流、完工手機通報功能。",
     "tags": ["Vue.js", "BootstrapVue", "Node.js Express", "MySQL", "D3.js", "EChart.js", "CCD RTSP"],
-    "images": ["Projects/SmartWeb/01.png", "Projects/SmartWeb/02.png"],
+    "images": ["Projects/SmartWeb/01.png", "Projects/SmartWeb/02.png", "Projects/SmartWeb/03.png", "Projects/SmartWeb/04.png"],
     "skillType": "Web"
   }, {
     "title": "加工路徑優化",
