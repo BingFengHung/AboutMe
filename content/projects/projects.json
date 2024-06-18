@@ -19,7 +19,7 @@
     "skillType": "Desktop"
   }, {
     "title": "Machine Play",
-    "content": "針對大型機台語大型的廠房，在人力資源不足的情況下，往往需要一人操作多台機台，藉由此功能可監控機台加工、刀具參數等，無須走近至基台端，有效減少人員抄寫資訊錯誤與走動次數，提升工作效率",
+    "content": "針對大型機台與大型的廠房，在人力資源不足的情況下，往往需要一人操作多台機台，藉由此功能可監控機台加工、刀具參數等，無須走近至基台端，有效減少人員抄寫資訊錯誤與走動次數，提升工作效率",
     "tags": ["Xamarin.Forms", "ASP.NET", "SkiaSharp"],
     "images": ["Projects/Mobile/01.png", "Projects/Mobile/02.png", "Projects/Mobile/03.png"],
     "skillType": "Mobile"
