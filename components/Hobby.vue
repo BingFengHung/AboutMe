@@ -2,7 +2,6 @@
   <div class="container">
     <DotMark></DotMark>
     <div class="title">興趣</div>
-    <!-- <font-awesome icon="cog" /> -->
     <ul class="hobby_list">
       <li v-for="(hobby, index) in hobbies" :key="index">
         {{ hobby.text }}
@@ -27,7 +26,6 @@ hobbies.push({ text: '音樂', icons: ['fas', 'icons']});
 hobbies.push({ text: '籃球', icons: ['fas', 'basketball']});
 hobbies.push({ text: '棒球', icons: ['fas', 'baseball']});
 hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
-
 
 </script>
 
@@ -60,7 +58,7 @@ hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
 .hobby_list li {
   margin: 20px;
 }
-        
+
 @media screen and (min-width: 481px) {
   .hobby_list li {
     margin: 5px;

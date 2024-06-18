@@ -26,7 +26,7 @@ defineProps({
   padding: 10px;
   box-sizing: border-box;
 }
-    
+
 .langPanel {
   display: grid;
   grid-template-columns: 1fr 1fr;

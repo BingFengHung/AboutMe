@@ -29,63 +29,40 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import { useProjectStore } from '#imports';
-  import { SkillType } from '~/types/skillType'
-  const projectStore = useProjectStore()
-  const extension = ref('')
-  const iconLink = ref('')
-  
-  const project = projectStore.project || projectStore.sideProject
-  
-  if (project && project.skillType) {
-    switch (project.skillType) {
-      case SkillType.Web:
-        extension.value = '.vue'
-        iconLink.value = 'vue.png'
-        break;
-      case SkillType.Mobile:
-        extension.value = '.xaml'
-        iconLink.value = 'xamarin.png'
-        break;
-      case SkillType.Desktop:
-        extension.value = '.cpp'
-        iconLink.value = 'cpp.png'
-        break;
-      case SkillType.AI:
-        extension.value = '.py'
-        iconLink.value = 'python.png'
-        break;
-      case SkillType.VisualStudioExtension:
-        extension.value = '.ext'
-        iconLink.value = 'windows.png'
-        break;
-      case SkillType.VisualStudio:
-        extension.value = '.ext'
-        iconLink.value = 'visualstudio.png'
-        break;
-      default:
-        extension.value = '.c'
-    }
-  }
+<script setup lang="ts"> 
+import { useProjectStore } from '#imports';
+import { SkillMapping } from '~/utils/SkillTypeExtensions'; 
 
-  const Close = () => {
-    projectStore.setProject(null)
-    projectStore.setSideProject(null)
-    enableScroll()
-  }
+const projectStore = useProjectStore()
+const extension = ref('')
+const iconLink = ref('')
   
-  const enableScroll = () => {
-    document.body.style.overflow ='';
-  }
+const project = projectStore.project || projectStore.sideProject
   
-  const disableScroll = () => {
-    document.body.style.overflow ='hidden';
-  }
+if (project && project.skillType) {
 
-  onMounted(() => {
-    disableScroll();
-  })
+  const value = SkillMapping.get(project.skillType)!
+  extension.value = value.extension
+  iconLink.value = value.iconLink
+}
+
+const Close = () => {
+  projectStore.setProject(null)
+  projectStore.setSideProject(null)
+  enableScroll()
+}
+
+const enableScroll = () => {
+  document.body.style.overflow ='';
+}
+
+const disableScroll = () => {
+  document.body.style.overflow ='hidden';
+}
+
+onMounted(() => {
+  disableScroll();
+})
 </script>
 
 <style scoped>

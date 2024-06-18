@@ -18,9 +18,11 @@
 .dot span:nth-child(1) {
   background-color: #fb6158;
 }
+
 .dot span:nth-child(2) {
   background-color: #fdbb2b;
 }
+
 .dot span:nth-child(3) {
   background-color: #29cc41;
 }

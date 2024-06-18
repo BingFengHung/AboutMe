@@ -39,7 +39,6 @@ onMounted(async () => {
   const csharp = await fetchSkills('csharp');
   ({ title: dotNetSkill.title, skills: dotNetSkill.skills} = csharp);
 
-
   const web = await fetchSkills('web');
   ({ title: webSkill.title, skills: webSkill.skills} = web);
 
@@ -142,8 +141,8 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
   }
 }
 
-@media screen and (min-width: 980px) {
-   .skills {
+@media screen and (min-width: 980px) { 
+  .skills {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -162,6 +161,5 @@ const fetchSkills = async (skill: string): Promise<Skill> => {
     grid-column: 3 / 4;;
     grid-row: 1 / 2;;
   }
- 
 }
 </style>

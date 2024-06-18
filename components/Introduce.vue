@@ -32,21 +32,8 @@
 <script setup lang="ts"> 
   const bgContent = ref('01 '.repeat(2000)); 
   const year = ref(0)
-  const bgText = ref(''); //(new Array(100).fill('01'))
   const today = new Date()
   year.value = today.getFullYear() - 2016
-  
-  // const greetText = ['01'];// , 'Hello ', 'I am Joe ']
-  // const rand = Math.floor(Math.random() * greetText.length)
-  
-  // bgText.value = new Array(100).fill(greetText[rand]).join('')
-  
-  const getRandomColor = () => {
-    const opacity = Math.random()
-    
-    return `rbga(131, 148, 150, ${opacity}) !important`
-  }
-  
 </script>
 
 <style scoped>
@@ -83,6 +70,7 @@
 .title {
   font-size: 3rem;
 }
+
 .title_tag {
   color: white;
 }
@@ -94,10 +82,6 @@
 .title_name {
   color: #71b259;
 }
-
-/* .experience {
-  font-size: 1.3rem;
-} */
 
 .experience h3{
   font-size: 1.3rem;
