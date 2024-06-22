@@ -3,9 +3,7 @@
     <div class="inner">
       <div class="inner_title">
         <div class="proj-title">
-          <!-- <span class="tag"><&nbsp;</span> -->
           <span>#&nbsp;</span><span class="content">{{  project?.title }}</span>
-          <!-- <span class="tag">&nbsp;/></span> -->
         </div>
         <div class="close_btn" @click="Close">
           <font-awesome :icon="['fas', 'xmark']" />
