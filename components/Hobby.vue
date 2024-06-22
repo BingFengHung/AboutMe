@@ -4,8 +4,8 @@
     <div class="title">興趣</div>
     <ul class="hobby_list">
       <li v-for="(hobby, index) in hobbies" :key="index">
-        {{ hobby.text }}
         <font-awesome :icon="hobby.icons"/>
+        {{ hobby.text }}
       </li>
     </ul>
   </div>
@@ -56,7 +56,7 @@ hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
 }
 
 .hobby_list li {
-  margin: 20px;
+  margin: 20px 30px;
 }
 
 @media screen and (min-width: 481px) {
@@ -72,8 +72,5 @@ hobbies.push({ text: '騎腳踏車', icons: ['fas', 'bicycle']});
     padding: 0px;
     margin: 0px;
   }
-}
-
-@media screen and (max-device-width: 480px) {
 }
 </style>

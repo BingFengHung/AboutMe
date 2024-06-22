@@ -23,5 +23,11 @@
     "tags": ["Xamarin.Forms", "ASP.NET", "SkiaSharp"],
     "images": ["Projects/Mobile/01.png", "Projects/Mobile/02.png", "Projects/Mobile/03.png"],
     "skillType": "Mobile"
-  }]
+  }, { 
+    "title": "AI 機台循圓調整", 
+    "content": "為了解決機台在循圓時產生尖角的問題，通常需要售服人員到客戶端根據客戶加工條件進行調整；這個過程中存在兩個問題：客戶無法自行調整，以及售服人員需要到客戶端；為了減少人力浪費，此功能主要的目的是，讓客戶能夠根據自身的需求，一鍵自動進行調整， 從而縮短等待的時間。",
+    "images": ["Projects/AIMachineServo/01.png"],
+    "tags": ["AI", "WPF", "C/C++"],
+    "skillType": "AI"
+    }]
 }
