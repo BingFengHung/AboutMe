@@ -4,6 +4,7 @@
     <SkillCard :ability="desktop" />
     <SkillCard :ability="web" />
     <SkillCard :ability="mobile" />
+    <SkillCard :ability="clang" />
   </div>
 </template>
 
@@ -12,15 +13,18 @@
   const desktop = reactive({} as Ability)
   const web = reactive({} as Ability)
   const mobile = reactive({} as Ability)
+  const clang = reactive({} as Ability)
 
   onMounted(async () => {
     const desktopData = await fetchAbility('desktop') as Ability
     const webData = await fetchAbility('web') as Ability
     const mobileData = await fetchAbility('mobile') as Ability
+    const clangData = await fetchAbility('clang') as Ability
     
     Object.assign(desktop, desktopData)
     Object.assign(web, webData)
     Object.assign(mobile, mobileData)
+    Object.assign(clang, clangData)
   })
   
   const fetchAbility = async (ability: string) => { 
