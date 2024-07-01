@@ -29,5 +29,11 @@
     "images": ["Projects/AIMachineServo/01.png"],
     "tags": ["AI", "WPF", "C/C++"],
     "skillType": "AI"
-    }]
+  }, {
+    "title": "加工程式路徑模擬", 
+    "content": "通常在加工之前，使用者都會透過機台空跑路徑的方式，來確認加工程式的執行路徑是否符合預期；透過此功能，使用者不需要先進行機台的空跑測試，可先透過此模擬功能，先確認加工程式路徑在機台上面的執行是否是可行的",
+    "images": ["Projects/ToolPathPreviewer/01.png", "Projects/ToolPathPreviewer/path_previewer.gif"],
+    "tags": ["WPF", "C/C++", "GCode"],
+    "skillType": "Desktop"
+  }]
 }
